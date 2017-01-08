@@ -84,7 +84,7 @@
                 </section>
                 <section>Slide 2</section!-->
 <section>
-    <table class="borderless" border="0" border-bottom="none">
+    <table>
         <tr class="borderless"><td class="grenzelos"/><td class="grenzelos"></td><td class="grenzelos"/><td class="grenzelos">loci</td><td class="grenzelos"></td></tr>
         <tr><td class="grenzelos"/><td class="grenzelos"></td><td class="grenzelos">many taxa</td><td class="grenzelos"/><td class="grenzelos">few taxa</td></tr>
         <tr><td class="grenzelos"/><td class="grenzelos">many loci</td>
@@ -99,7 +99,7 @@
     </table>
 </section>
 <section>
-    <table class="borderless" border="0" border-bottom="none">
+    <table>
         <tr><td class="grenzelos"><div class="divcomplete">almost complete</div></td>
             <td class="grenzelos"><div class="divchar">Adding loci for "core" taxa</div>
         </tr>
@@ -109,7 +109,7 @@
     </table>
 </section>
 <section>
-    <table class="borderless" border="0" border-bottom="none">
+    <table>
         <tr><td class="grenzelos"><div class="divcomplete">almost complete</div></td>
             <td class="grenzelos"><div class="divchar">Adding loci for "core" taxa</div>
         </tr>
@@ -118,9 +118,8 @@
         </tr>
     </table>
 </section>
-
 <section>
-    <table class="borderless" border="0" border-bottom="none">
+    <table>
         <tr><td class="grenzelos"><div class="divcomplete">almost complete</div></td>
             <td class="grenzelos"><div class="divchar">Adding loci for "core" taxa</div>
         </tr>
@@ -130,7 +129,7 @@
     </table>
 </section>
 <section>
-    <table class="borderless" border="0" border-bottom="none">
+    <table>
         <tr><td class="grenzelos"><img class="grenzelos" src="./images/complete-data-tree.svg" border="none" width="300"></td><td class="grenzelos"/>
             <td class="grenzelos"></div></td>
         </tr>
@@ -140,7 +139,7 @@
     </table>
 </section>
 <section>
-    <table class="borderless" border="0" border-bottom="none">
+    <table>
         <tr><td class="grenzelos"><img class="grenzelos" src="./images/complete-data-tree.svg" border="none" width="300"></td><td class="grenzelos"/>
             <td class="grenzelos"></div></td>
         </tr>
@@ -148,15 +147,40 @@
         </tr>
     </table>
 </section>
+<section data-markdown>
+    <script type="text/template">
+        ### Adding taxa for well-sampled loci
+
+Cons:
+  * Expands tree + maybe the domain of your question
+  * Can add new long branches
+  * Uncertainty of new taxa can obscure consensus tree
+
+Pros:
+  * Can break long branches
+    </script>
+</section>
 <section>
-    <table class="borderless" border="0" border-bottom="none">
+    <table>
         <tr><td class="grenzelos"><img class="grenzelos" src="./images/complete-data-tree.svg" border="none" width="300"></td><td class="grenzelos"/>
         <td class="grenzelos"><img class="grenzelos" src="./images/added-loci-tree.svg" border="none" width="300">      <td class="grenzelos"></div></td>
         </tr>
     </table>
 </section>
+<section data-markdown>
+    <script type="text/template">
+        ### Adding loci for best-sampled taxa
+
+Cons:
+  * Won't break long branches.
+  * Can create long branches by lack of data for some tips
+
+Pros:
+  * Lots of sites can detect subtle signals
+    </script>
+</section>
 <section>
-    <table class="borderless" border="0" border-bottom="none">
+    <table>
         <tr><td class="grenzelos"><img class="grenzelos" src="./images/complete-data-tree.svg" border="none" width="300"></td><td class="grenzelos"/>
         <td class="grenzelos"><img class="grenzelos" src="./images/added-loci-tree.svg" border="none" width="300">      <td class="grenzelos"></div></td>
         </tr>
@@ -165,7 +189,7 @@
         </tr>
     </table>
 </section>
-<section data-markdown="example.md"  
+<section data-markdown="missing-data.md"  
          data-separator="^\n\n\n"  
          data-separator-vertical="^\n\n"  
          data-separator-notes="^Note:"  
