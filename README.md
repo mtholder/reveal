@@ -1,6 +1,7 @@
 # Reveal-based slides by Mark T. Holder
 
-Deployed at https://mtholder.github.io/reveal/
+The [gh-pages](https://github.com/mtholder/reveal/tree/gh-pages) branch of 
+this repo is deployed to https://mtholder.github.io/reveal/
 
 Images from papers are in the images directory. Filenames gives an
 abbreviation of the reference. Grepping the source files for usage of 
