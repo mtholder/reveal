@@ -15,7 +15,7 @@ Pros:
 
   * Readers want to know how your phylogenetic model fits with all available data
   * More convincing to present full data, and **interrogate** analyses for causes of incongruence
-  * That doesn't mean "total evidence"
+  * That doesn't mean the "total evidence" tree
 
 
 
@@ -36,6 +36,7 @@ See [MARE software](https://www.zfmk.de/de/forschung/forschungszentren-und-grupp
 
   * Missing data × model misspecification
   * Missing data × model partitioning
+  * Missing data × analysis method
   * Missing data × ascertainment biases
   * Missing data × tree depth
 
@@ -129,7 +130,7 @@ Damned if you don't:
 
 
 ### Missing data × tree depth
-
+ls
   * Shallow trees ⇒ Missing data × ascertainment biases becomes more pronounced.
   * Deep tree ⇒ Missing data × model misspecification becomes more pronounced.
 
