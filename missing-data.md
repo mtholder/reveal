@@ -156,6 +156,14 @@ inconsistent.
 
 
 
+
+### Simulation studies and comparisons to known species trees
+
+  * Most of these studies have supported the "missing data are not a problem" view
+  * The concern is that both of these study designs are too easy
+
+
+
 ### Phylogenetic inference is hard
 
   * Even with lots of data.
