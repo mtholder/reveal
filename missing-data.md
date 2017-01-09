@@ -123,14 +123,13 @@ Damned if you don't:
 
 
 
-<img width="90%" src="images/Shavit-Grievink-et-al-2013-fig-3.png">
+<img width="80%" src="images/Shavit-Grievink-et-al-2013-fig-3.png">
 
 (Figure 3 of [Shavit Grievink *et al.*, 2013](http://gbe.oxfordjournals.org/content/5/4/681.long))
 
 
 
 ### Missing data × tree depth
-ls
   * Shallow trees ⇒ Missing data × ascertainment biases becomes more pronounced.
   * Deep tree ⇒ Missing data × model misspecification becomes more pronounced.
 
@@ -139,7 +138,7 @@ ls
 ### An analogy to multiple sequence aligment
 
   * Many people filter alignments to avoid areas of questionable alignment accuracy ( but see [Tan *et al.* (2015)](http://sysbio.oxfordjournals.org/content/64/5/778))
-  * If your alignment and model are correct, treating gaps-as-missing-data leads to consisten tree estimation ([McTavish *et al.*(2015)](http://www.sciencedirect.com/science/article/pii/S1055790315002316), [Truszkowski and Goldman](http://sysbio.oxfordjournals.org/content/65/2/328.short))
+  * If your alignment and model are correct, treating gaps-as-missing-data leads to consisten tree estimation ([McTavish *et al.*(2015)](http://www.sciencedirect.com/science/article/pii/S1055790315002316), [Truszkowski and Goldman (2016)](http://sysbio.oxfordjournals.org/content/65/2/328.short))
   * But, gaps-as-missing-data can lead to inconsistent tree estimation under mild ascertainment bias.
 
 
@@ -173,3 +172,5 @@ inconsistent.
   biases can mess us up.
 
 **Be careful out there!**
+
+
