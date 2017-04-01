@@ -23,16 +23,20 @@
 
 
 
-## Task 2: find a P-value
- * The file `step19.sim.log` is the log from phylogenetic software run on 1000 
- simulations. For each simulation, the software produces 2 tree "Length" numbers.
+## Task 2: Background
+ * The file `step19.sim.log` has the output from 1000 
+ simulations. Each produces 2 tree "Length" numbers.
  We are interested in the distribution of the difference between these 2 numbers.
- * In particular: **What are the 50 largest differences?**
  * `consecutiveDiffs.py` is a python script that will read from standard input. If the 
  input is a series of numbers, the script will write to standard output. It will write
  the difference between 1st and 2nd number, the difference the 3rd and 4th, etc.
- * Can you construct a pipeline to answer our question?
 
+
+
+
+## Task 2: find a P-value
+ * Can you construct a pipeline to answer the question: **What are the 50 largest differences?**
+ 
 
 
 ## Checking your answers
