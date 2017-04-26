@@ -91,3 +91,38 @@ An automated system creates OTT by merging:
   * 6 large taxonomies (NCBI, GBIF, IRMNG, SILVA, Index Fungorum, WoRMS)
   * 2 small taxonomies from publications Hibbett *et al.* (2007) and Schäferhoff *et al.* (2010)
   * a curated set of corrections.
+
+
+
+### Why is merging taxonomies hard?
+
+
+
+### Why is merging taxonomies hard?
+
+  1. Taxonomic names are not identifiers.
+    * A species can have only valid name per classification, but there is no regulation
+      of taxonomy.
+      * Genus name could differ.
+      * Both genus name and epithet can differ.
+    * The same name can refer to different taxa governed by different codes.
+    * Higher taxonomic names unregulated
+  2. Very few taxon concept definitions are recorded.
+  3. The largest databases tend to have less metadata about the names (e.g. authority info)
+ 
+
+
+
+<img src="images/ReesCranstonFig2.jpg"/><br />
+Rees & Cranston, Fig. 2
+
+
+
+<img src="images/ReesCranstonFig3-upper.png" /><br />
+Rees & Cranston, Fig. 3
+
+
+
+
+<img src="images/ReesCranstonFig3-lower.png" /><br />
+Rees & Cranston, Fig. 3
