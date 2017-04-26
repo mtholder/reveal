@@ -154,3 +154,48 @@ Rees & Cranston, Fig. 3
   * 3.1 million taxonomic names thought to be valid
   * 1.8 million synonyms
   * browsable at https://tree.opentreeoflife.org/taxonomy
+
+
+
+<img src="images/architecture.png"/>
+
+
+
+## Goals of the summary tree creator
+Paraphrasing [Redelings and Holder (2017)](https://peerj.com/articles/3058/),
+the summary tree should:
+
+  1. display no unsupported groups,
+  2. defer higher ranked trees,
+  3. be as resolved as feasible, and
+  4. displays as many groupings from input trees as possible.
+
+
+
+### Defn: a tree "displays group *X*"
+
+Recall that the summary tree *S* will have more species than the input trees.
+Consider:
+  * some input tree *T1* that has a subtree called *X*,
+  * imagine pruning the summary tree *S* down to the leaf set 
+    of *T1*
+
+If the pruned tree shows a subtree with only the leaves of *X*, then
+  *S* displays *X*.
+
+
+
+
+<img src="images/RedelingsHolderFig1.png"/>
+
+
+
+
+### A definition of "supported"
+If edge *Y* in the summary tree *S* can be collapsed, and the
+    resulting tree still displays the same set of input
+    groups, then we say that edge *Y* was "unsupported".
+
+If collapsing that edge means that the tree now longer
+    displays input group *X*, then we say that "*Y* was supported by *X*"
+
