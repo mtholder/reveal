@@ -199,3 +199,125 @@ If edge *Y* in the summary tree *S* can be collapsed, and the
 If collapsing that edge means that the tree now longer
     displays input group *X*, then we say that "*Y* was supported by *X*"
 
+
+
+
+### Using tree ranking
+It is a hack, but it makes the results easy to understand (and improve by reranking).<br />
+<img src="images/RedelingsHolderFig2.png"/>
+
+
+
+
+## Goals of the summary tree creator
+Paraphrasing [Redelings and Holder (2017)](https://peerj.com/articles/3058/),
+the summary tree should:
+
+  1. display no unsupported groups,
+  2. defer higher ranked trees,
+  3. be as resolved as feasible, and
+  4. displays as many groupings from input trees as possible.
+
+
+
+### Summary tree problem
+Finding the tree that maximizes the number of input
+groups displayed is an **NP**-hard problem.
+
+The problem is big:
+  1. about 2.6 million tips,
+  1. 810 input trees,
+  2. 48 thousand input splits/clades
+
+
+
+### Tricks for building the huge tree
+Only about 55 thousand tips are exemplified in a phylogenetic input, so we:
+  1. prune the taxonomy down to those 55 thousand,
+  2. build the summary tree for that leaf set,
+  3. graft the pruned taxa back on according to the taxonomy.
+
+
+
+<img src="images/RedelingsHolderFig4.png"/><br />
+<img src="images/RedelingsHolderFig5.png"/>
+
+
+
+### Tricks for building the huge tree
+  1. Prune to phylo-tips, then regraft
+  2. If a taxon is not contested by any single input tree, we can 
+      constrain it to be in the summary tree.
+  3. Divide and conquer:
+    1. Break up the problem into subproblems at these constrained nodes.
+    2. Solve each subproblem,
+    3. Glue them back together
+
+
+
+
+<img src="images/RedelingsHolderFig5.png"/><br />
+<img src="images/RedelingsHolderFig6.png"/>
+
+
+
+Note that decomposition can result in lower ranked inputs being displayed:<br />
+<img src="images/RedelingsHolderFig7.png"/>
+
+
+
+
+### How can we tell if we can add a clade to a subproblem?
+We use the BUILD algorithm from [Aho *et al.* (1981)](http://www.bioinf.uni-leipzig.de/Leere/SS15/FortMeth/paper/aho-sag-1981.pdf)
+
+In our case:
+  1. Displayed splits, *D* = empty set.
+  2. decode each input grouping into a rooted split: `{ingroup}|{outgroup}`
+  3. For each split *x* in ranked order:
+    if BUILD says *D* with *x* can all be displayed on a tree, add *x* to *D*
+  4. Use BUILD to create the solution for *D*
+
+
+
+### BUILD a tree from a set of splits *D*
+  1. Make a graph with each leaf label as a node
+  2. for each split *x* in *D*: draw a set of edges, each from the first member of the ingroup to each other label in the ingroup
+  3. If there is only 1 connected component of the graph, *D* is not a set of compatible splits.
+  4. Run BUILD on each connected components with the splits restricted to those leaves.
+  5. If each succeed, the components are the children of the root of the tree.
+
+
+
+<img src="images/RedelingsHolderFig6.png"/><br />
+<img src="images/RedelingsHolderFig9.png"/>
+
+
+
+gluing is easy:<br />
+<img src="images/RedelingsHolderFig9.png"/>
+<img src="images/RedelingsHolderFig10.png"/>
+
+
+
+So is unpruning the taxonomy-only taxa:<br />
+<img src="images/RedelingsHolderFig11.png"/>
+
+
+
+
+We keep notes about how the input trees support or conflict
+with the summary:
+<img src="images/RedelingsHolderFig13.png"/>
+
+
+
+...So we can browse the tree and see support and conflict:
+as in the case of [this grouping of birds](https://tree.opentreeoflife.org/opentree/argus/opentree9.1@mrcaott246ott5021)
+
+
+
+### Questions?
+
+Thanks to NSF and the entire Open Tree of Life team and community volunteers.
+
+(you can also give us feedback via our [gitter group chat channel](https://gitter.im/OpenTreeOfLife/public) )
