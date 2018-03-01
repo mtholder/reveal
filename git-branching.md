@@ -84,4 +84,6 @@ Don't worry about learning the commands I'm about to show - almost on git users 
   * test before you commit
   * test after you merge (or pull, since a pull is a merge) - unless you did a fast-forward merge
   * <code>git bisect</code>
-  * [Travis continuous integration testing](https://travis-ci.org/OpenTreeOfLife/peyotl)
+  * [Travis continuous integration testing](https://travis-ci.org/OpenTreeOfLife/peyotl) see configuration file at [peyotl on GitHub](https://github.com/OpenTreeOfLife/peyotl/blob/master/.travis.yml)
+
+See [data repo](https://github.com/mtholder/git-branch-tutorial-data) for notes and scripts
