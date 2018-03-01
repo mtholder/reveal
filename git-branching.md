@@ -1,3 +1,10 @@
+### Hi!
+  * [Mark T. Holder](http://phylo.bio.ku.edu)
+  * computational evolutionary biologist in EEB and the BI
+  * https://orcid.org/0000-0001-5575-0536
+
+
+
 ### Goals
  * Learning how to use <code>git</code> branches effectively.
    * <code>git branch</code>
@@ -86,4 +93,10 @@ Don't worry about learning the commands I'm about to show - almost on git users 
   * <code>git bisect</code>
   * [Travis continuous integration testing](https://travis-ci.org/OpenTreeOfLife/peyotl) see configuration file at [peyotl on GitHub](https://github.com/OpenTreeOfLife/peyotl/blob/master/.travis.yml)
 
-See [data repo](https://github.com/mtholder/git-branch-tutorial-data) for notes and scripts
+
+
+
+### Links
+  * See [data repo](https://github.com/mtholder/git-branch-tutorial-data) for notes and scripts
+  * See [SwC git tutorial starting at "remotes"](https://swcarpentry.github.io/git-novice/07-github/)  for an exercise
+
