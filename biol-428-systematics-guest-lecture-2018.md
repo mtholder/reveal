@@ -316,6 +316,46 @@ as in the case of [this grouping of birds](https://tree.opentreeoflife.org/opent
 
 
 
+Recent work: dealing with *incertae sedis* taxa more reasonably.
+
+
+
+
+<img src="images/incert-sed-ABCD-taxonomy.png" width="600" />
+
+
+
+
+*incertae sedis* taxa ealt with as partial splits or alternative "phyloreferences"
+
+<img src="images/incert-sed-ABCD-taxonomy.png" width="400" />
+
+AB = MRCA({A,B}) if it excludes {D}  
+
+*vs*
+
+AB = MRCA({A,B}) if it excludes {C,D}
+
+
+
+
+<img src="images/incert-sed-ABCD-with-soln.png" width="800" />
+
+
+
+
+<img src="images/incert-sed-ABCD-non-unique-names.png" width="800" />
+
+
+
+
+Choice of how to define a name can be non-obvious
+
+<img src="images/incert-sed-ABCD-non-obvious-names.png" width="800" />
+
+
+
+
 ### Questions?
 
 Thanks to NSF and the entire Open Tree of Life team and community volunteers.
