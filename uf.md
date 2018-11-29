@@ -388,7 +388,7 @@ The quality chicken-and-egg problem
     * Better conflict viewing tools
     * "social" enhancements - better home page for authors/curators
     * More transparent status of the pipeline
-
+  * Better integration with cool tree viz tools built by others
 
 
 ### Open Tree longer term goals
@@ -396,6 +396,42 @@ The quality chicken-and-egg problem
   * Dated tree
   * Scraping more info from other resource
   * Automatic gene tree updating (McTavish lab)
+
+
+
+<img src="images/SukumaranKnowles2016Fig1Image.png" />
+
+Sukumaran, Knowles (2017) "Multispecies coalescent delimits structure, not species"
+
+
+
+
+#### Can estimate species completion rate from constraints
+<img src="images/SukumaranKnowles2016Fig1SpTreeConstraint.png" width="500px" />
+
+
+
+
+#### Estimates of species completion rate from 60-lineage simulations
+<img src="images/delineate-sp-rate-est.png" width="500px" />
+
+
+
+
+#### Huge uncertainty even if the speciation completion rate is known
+
+15 lineage trees simulated:
+  * Approx. 500,000 possible partitions
+  * median # in the 95% credible interval: about 17,000
+
+It is possible to be more confident about whether a pair of lineages are conspecific
+
+
+
+
+Sukumaran, Knowles (2017) "Multispecies coalescent delimits structure, not species"
+
+You can model speciation completion, but you should expect substantial uncertainty.
 
 
 
