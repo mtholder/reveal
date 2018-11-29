@@ -381,8 +381,35 @@ The quality chicken-and-egg problem
 
 
 
-### Questions?
 
-Thanks to NSF and the entire Open Tree of Life team and community volunteers.
+### Open Tree short term goals
+
+  * Better user experience for curation:
+    * Better conflict viewing tools
+    * "social" enhancements - better home page for authors/curators
+    * More transparent status of the pipeline
+
+
+
+### Open Tree longer term goals
+
+  * Dated tree
+  * Scraping more info from other resource
+  * Automatic gene tree updating (McTavish lab)
+
+
+
+### Thanks! 
+  * NSF
+  * the entire Open Tree of Life team and community volunteers.
+  * Gavin and David for inviting me
+
+
+
+
+### Questions?
+### My question for you:
+
+What features would motivate you to contribute studies/trees to Open Tree?
 
 (you can also give us feedback via our [gitter group chat channel](https://gitter.im/OpenTreeOfLife/public) )
