@@ -312,7 +312,7 @@ with the summary:
 
 
 ...So we can browse the tree and see support and conflict:
-as in the case of [this grouping of birds](https://tree.opentreeoflife.org/opentree/argus/opentree9.1@mrcaott246ott5021)
+as in the case of [this grouping of birds](https://tree.opentreeoflife.org/opentree/argus/opentree10.4@mrcaott246ott5021)
 
 
 
@@ -330,9 +330,7 @@ Recent work: dealing with *incertae sedis* taxa more reasonably.
 
 <img src="images/incert-sed-ABCD-taxonomy.png" width="400" />
 
-AB = MRCA({A,B}) if it excludes {D}  
-
-*vs*
+AB = MRCA({A,B}) if it excludes {D}   *vs*
 
 AB = MRCA({A,B}) if it excludes {C,D}
 
@@ -353,6 +351,11 @@ Choice of how to define a name can be non-obvious
 
 <img src="images/incert-sed-ABCD-non-obvious-names.png" width="800" />
 
+
+
+Recall that many *incertae sedis* groups are created in our taxonomy merging
+<img src="images/ReesCranstonFig3-lower.png" /><br />
+Rees & Cranston, Fig. 3
 
 
 
