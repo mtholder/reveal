@@ -39,14 +39,6 @@
 
 
 
-<img src="images/WiegmannPNAS.png" />
-
-
-
-<img width="500" src="images/WiegmannFlyTree.jpg" />
-
-
-
 
 <img src="images/using_trees.png" />
 
@@ -123,7 +115,7 @@ An automated system creates OTT by merging:
 
 
 
-###    # A cross-code homonym example
+###    A cross-code homonym example
 
 *Aporia sordida*
   * A tea plant [in the last gbif version we used](http://www.gbif.org/species/6880118/)
@@ -295,7 +287,7 @@ In our case:
 
 gluing is easy:<br />
 <img src="images/RedelingsHolderFig9.png"/>
-<img src="images/RedelingsHolderFig10.png"/>
+<img src="images/RedelingsHolderFig10.png" width="400px" />
 
 
 
@@ -326,7 +318,7 @@ Recent work: dealing with *incertae sedis* taxa more reasonably.
 
 
 
-*incertae sedis* taxa ealt with as partial splits or alternative "phyloreferences"
+*incertae sedis* taxa dealt with as partial splits or alternative phyloreferences
 
 <img src="images/incert-sed-ABCD-taxonomy.png" width="400" />
 
@@ -356,6 +348,36 @@ Choice of how to define a name can be non-obvious
 Recall that many *incertae sedis* groups are created in our taxonomy merging
 <img src="images/ReesCranstonFig3-lower.png" /><br />
 Rees & Cranston, Fig. 3
+
+
+
+### tree version 10.4 includes *incertae sedis* taxa
+
+  * Added 3,737 new tips
+  * Soon we will be able to add fossil taxa treating them as *incertae sedis*
+
+
+
+### Open Tree problems
+
+The quality chicken-and-egg problem
+
+  * Having a good tree might inspire community engagment in curation
+  * Having a good tree requires community engagment in curation
+
+
+
+
+<img src="images/ot-time-series.png" />
+
+
+
+
+### Open Tree status
+
+  * wrapping up some clean up of the infrastructure:
+    * Summer 2018: 12 core repos, 4 full languages
+    * Summer 2019 goal: 5 core repos, 3 full languages
 
 
 
