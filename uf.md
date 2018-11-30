@@ -391,11 +391,21 @@ The quality chicken-and-egg problem
   * Better integration with cool tree viz tools built by others
 
 
+
 ### Open Tree longer term goals
 
   * Dated tree
   * Scraping more info from other resource
   * Automatic gene tree updating (McTavish lab)
+
+
+
+## Some recent work on species delimitation
+
+with:
+ * Jeet Sukumaran (SDSU). *note* Jeet is recruiting! https://sukumaranlab.org/people/
+ * Lacey Knowles U. Michigan
+
 
 
 
@@ -418,7 +428,24 @@ Sukumaran, Knowles (2017) "Multispecies coalescent delimits structure, not speci
 
 
 
-#### Huge uncertainty even if the speciation completion rate is known
+#### Can calculate con- or hetero-specific probabilities
+
+For lineages, A, B, C, D, E and estimated tree T with species completion rate β:
+
+* Pr(S=`{A,B,*};*` | β, T)
+* Pr(S=`{A,*};{B,*};*` | β, T)
+
+
+
+#### Can estimate species partitions
+
+For lineages, A, B, C, D, E and estimated tree T with species completion rate β:
+
+Pr(S=`{A,B};{C,D};{E}` | β, T)
+
+
+
+#### Huge uncertainty for species partitions
 
 15 lineage trees simulated:
   * Approx. 500,000 possible partitions
