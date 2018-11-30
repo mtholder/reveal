@@ -1,3 +1,12 @@
+### Timeline
+
+  * 2012: 3 year award 12 PIs over 11 institutions. Karen Cranston/Duke lead.
+  * 2015: 2 year supplement to 3 bioinformatics labs
+  * 2018: almost died
+  * 2018: ABI award: 4 years KU and UC Merced
+
+
+
 ### How should we build a tree of about 2.6 million tips?
 
   1. Supermatrix
@@ -40,15 +49,15 @@
 
 
 
+<img src="images/overview.png "/>
+
+
+
 <img src="images/using_trees.png" />
 
 
 
-<img src="images/fractionTreesArchived.png" />
-
-
-
-<img src="images/overview.png "/>
+<img src="images/fractionTreesArchived.png" width="600px"/>
 
 
 
@@ -111,7 +120,7 @@ An automated system creates OTT by merging:
   1. Merge taxonomies iteratively
   2. Align names in the next taxonomy to the current union taxonomy
     1. Find candidate alignments based on name matching,
-    2. Consider placement, rank, shared descendants, *etc.* tp decide if a candidate is a good match
+    2. Consider placement, rank, shared descendants, *etc.* to decide if a candidate is a good match
 
 
 
@@ -127,12 +136,6 @@ An automated system creates OTT by merging:
 
 <img src="images/ReesCranstonFig2.jpg"/><br />
 Rees & Cranston, Fig. 2
-
-
-
-<img src="images/ReesCranstonFig3-upper.png" /><br />
-Rees & Cranston, Fig. 3
-
 
 
 
@@ -219,7 +222,7 @@ groups displayed is an **NP**-hard problem.
 The problem is big:
   1. about 2.64 million tips,
   1. 987 input trees,
-  2. 59 thousand slades from phylogenies
+  2. 59 thousand clades from phylogenies
 
 
 
@@ -388,7 +391,7 @@ The quality chicken-and-egg problem
     * Better conflict viewing tools
     * "social" enhancements - better home page for authors/curators
     * More transparent status of the pipeline
-  * Better integration with cool tree viz tools built by others
+  * Better integration with cool tree viz tools built by others (e.g. [OneZoom](http://www.onezoom.org/) and [LifeMap](https://www.univ-lyon1.fr/news/lifemap-exploring-the-tree-of-life-935319.kjsp))
 
 
 
