@@ -289,6 +289,7 @@ https://mtholder.github.io/reveal/latex/many_trees.pdf
 
   1. If a phylogenetic tree is so crucial to answering evolutionary questions, why are trees re-used so infrequently?
   2. Can we design ways for summarizing interesting aspects of phylogenetic uncertainty?
+  Perhaps a super-summary instead of a super-tree or super-matrix
 
 
 
