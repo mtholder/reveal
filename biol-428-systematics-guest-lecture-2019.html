@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Holder - Open Tree of Life</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/black.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<style>
+.divblank {
+width: 500px;
+height: 166px;
+border: 2px solid green;
+color: black;
+}
+.divcomplete {
+width: 500px;
+height: 166px;
+border: 2px solid green;
+box-sizing: border-box;
+background: green;
+color: white;
+}
+.divchar {
+width: 666px;
+height: 166px;
+border: 2px solid blue;
+box-sizing: border-box;
+background: blue;
+color: white;
+}
+.divtaxa {
+width: 500px;
+height: 333px;
+border: 2px solid yellow;
+box-sizing: border-box;
+background: yellow;
+color: blue;
+}
+.divall {
+width: 666px;
+height: 333px;
+border: 2px solid red;
+box-sizing: border-box;
+background: red;
+color: white;
+}
+.borderless {
+border-bottom: none;
+margin: 0px;
+}
+
+.reveal table td.grenzelos {
+text-align: left;
+padding: 0.2em 0.5em 0.2em 0.5em;
+border-bottom: none; }
+
+.reveal section img.grenzelos {
+border: 0;
+box-shadow: none; 
+}
+
+</style>
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-markdown>
+      <script type="text/template">
+        ## Open Tree of Life
+        ### BIOL 428 guest lecture March, 2019
+
+
+        [Mark T. Holder](http://phylo.bio.ku.edu) Dept of [Ecology and Evolutionary Biology, Univ. Kansas](http://eeb.ku.edu/) and the 
+        [KU Biodiversity Institute](https://biodiversity.ku.edu).
+
+        Many slides from [Karen Cranston](https://kcranston.github.io/)
+      </script>
+    </section>
+    <section>
+    <p>
+    <img width="800" src="images/linnaeus_darwin.jpeg">
+    </p>
+    </section>
+
+    <section>
+      <blockquote>
+        Phylogeny provides a mechanism through which to interpret the
+        patterns and processes of evolution and to predict the responses of
+        life to rapid environmental change. Phylogenies and phylogenetic
+        methods are now being used to enhance agriculture, identify and
+        combat diseases, conserve biodiversity, and predict responses to
+        global climate change and to biological invasions.
+      </blockquote>
+    <dt>(tl;dr: We need trees to do cool and important science)<dt>
+    <!-- <p><small>*Open Tree grant proposal</p> -->
+    </section>
+    
+    <section data-background="images/sciam_circle_life.jpg">
+    </section>
+
+    
+    <section data-background="images/sciam_circle_life.jpg">
+        <p style="background-color:white;color:black">Open Tree goals<br/>
+            Engage community to create a tree of life that is:<br />
+            1. Complete<br />
+            2. Online<br />
+            3. Constantly updated
+        </p>
+    </section>
+    <section data-markdown="biol-428-systematics-guest-lecture-2018.md"  
+    data-separator="^\n\n\n"  
+    data-separator-vertical="^\n\n"  
+    data-separator-notes="^Note:"  
+    data-charset="utf-8">
+    </section>
+  </div>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+// More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+history: true,
+
+// More info https://github.com/hakimel/reveal.js#dependencies
+dependencies: [
+{ src: 'plugin/markdown/marked.js' },
+{ src: 'plugin/markdown/markdown.js' },
+{ src: 'plugin/notes/notes.js', async: true },
+{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+]
+});
+</script>
+</body>
+</html>
