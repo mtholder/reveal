@@ -1,6 +1,3 @@
-
-
-
 ### How should we build a tree of about 2.6 million tips?
 
   1. Supermatrix
@@ -23,10 +20,10 @@
 
 
 ### Supertree analyses
-  1. Gather a large set of partially overlapping estimated trees - These will be the data.
-  1. Define an optimality criterion or procedure for resolving conflict.
-  3. Produce a "supertree" that has all of the species
-  in the sample.
+  1. Input: published estimates of phylogeny
+  1. Choose a method/goals
+  3. Output: a "supertree" that has all of the species
+  in the inputs.
 
 
 
@@ -70,8 +67,8 @@ https://github.com/OpenTreeOfLife/phylesystem-1
 
 ### Assembly of the Open Tree Taxonomy (OTT)
 
-See Rees and Cranston [preprint](http://biorxiv.org/content/biorxiv/early/2017/03/13/116418.full.pdf)
-  for details; that manuscript is the source of several of the next images and examples
+See [Rees and Cranston (2017)](https://bdj.pensoft.net/article/12581/instance/3545675/)
+  for details
 
 An automated system creates OTT by merging:
   * 6 large taxonomies (NCBI, GBIF, IRMNG, SILVA, Index Fungorum, WoRMS)
@@ -139,9 +136,12 @@ If collapsing that edge means that the tree now longer
 
 
 ### Using tree ranking
-It is a hack, but it makes the results easy to understand (and improve by reranking).<br />
-<img src="images/RedelingsHolderFig2.png"/>
+***Ad hoc***, but easy to understand + improve the tree:
+<br />
+<img src="images/RedelingsHolderFig2-inputs.png"/><br/>
+inputs ↑ &nbsp; 3 solutions each displaying 2 splits ↓
 
+<img src="images/RedelingsHolderFig2-outputs.png"/>
 
 
 
@@ -162,14 +162,13 @@ groups displayed is an **NP**-hard problem.
 
 The problem is big:
   1. about 2.6 million tips,
-  1. 810 input trees,
-  2. 48 thousand input splits/clades
+  1. 987 input trees,
+  2. 50 thousand phylogenetic input splits
 
 
 
 ### Tricks for building the huge tree
-Only about 55 thousand tips are exemplified in a phylogenetic input, so we:
-  1. prune the taxonomy down to those 55 thousand,
+  1. prune the taxonomy down to those 65K tips are exemplified in a phylogenetic input,
   2. build the summary tree for that leaf set,
   3. graft the pruned taxa back on according to the taxonomy.
 
@@ -185,7 +184,6 @@ inputs ↑ &nbsp; exemplified versions ↓
 ### Divide and conquer
 If a taxon is not contested by any single input tree, we 
       constrain it to be in the summary tree.
-
 
   1. Break up the problem into subproblems at these constrained nodes.
   2. Solve each subproblem.
@@ -203,7 +201,7 @@ inputs ↑ &nbsp; and 2 subproblems ↓
 
 This can result in lower ranked inputs being displayed:<br />
 <img src="images/RedelingsHolderFig7-inputs.png"/><br/>
-inputs ↑ <br/> ↙ highest ranked solution &nbsp; ↘ OT solution 
+inputs ↑ <br/> highest ranked  ↙  &nbsp; ↘ OT solution 
 
 <img src="images/RedelingsHolderFig7-outputs.png"/>
 
@@ -244,55 +242,35 @@ with the summary:
 
 
 ...So we can browse the tree and see support and conflict:
-as in the case of [this grouping of birds](https://tree.opentreeoflife.org/opentree/argus/opentree9.1@mrcaott246ott5021)
-
-
-
-Recent work: dealing with *incertae sedis* taxa more reasonably.
+as in the case of [this grouping of birds](https://tree.opentreeoflife.org/opentree/argus/opentree10.4@mrcaott246ott5021)
 
 
 
 
-<img src="images/incert-sed-ABCD-taxonomy.png" width="600" />
-
-
-
-
-*incertae sedis* taxa ealt with as partial splits or alternative "phyloreferences"
-
-<img src="images/incert-sed-ABCD-taxonomy.png" width="400" />
-
-AB = MRCA({A,B}) if it excludes {D}  
-
-*vs*
-
-AB = MRCA({A,B}) if it excludes {C,D}
-
-
-
-
-<img src="images/incert-sed-ABCD-with-soln.png" width="800" />
-
-
-
-
-<img src="images/incert-sed-ABCD-non-unique-names.png" width="800" />
-
-
-
-
-Choice of how to define a name can be non-obvious
-
-<img src="images/incert-sed-ABCD-non-obvious-names.png" width="800" />
-
-
-
-
-### Questions?
+### Thanks?
 
 Thanks to NSF and the entire Open Tree of Life team and community volunteers.
 
 (you can also give us feedback via our [gitter group chat channel](https://gitter.im/OpenTreeOfLife/public) )
+
+
+
+### Challenges in large-scale phylogenetics
+
+  1. Statistical
+  2. Computational
+  3. Data collection and cleaning
+
+
+
+<img src="images/source-of-bact-phylo-error-by-lookback-time.png"/>
+
+
+
+
+### More Open Tree Slides after this point
+
+ (just in case)
 
 
 
@@ -341,5 +319,46 @@ Rees & Cranston, Fig. 3
 
 <img src="images/ReesCranstonFig3-lower.png" /><br />
 Rees & Cranston, Fig. 3
+
+
+
+
+Recent work: dealing with *incertae sedis* taxa more reasonably.
+
+
+
+
+<img src="images/incert-sed-ABCD-taxonomy.png" width="600" />
+
+
+
+
+*incertae sedis* taxa ealt with as partial splits or alternative "phyloreferences"
+
+<img src="images/incert-sed-ABCD-taxonomy.png" width="400" />
+
+AB = MRCA({A,B}) if it excludes {D}  
+
+*vs*
+
+AB = MRCA({A,B}) if it excludes {C,D}
+
+
+
+
+<img src="images/incert-sed-ABCD-with-soln.png" width="800" />
+
+
+
+
+<img src="images/incert-sed-ABCD-non-unique-names.png" width="800" />
+
+
+
+
+Choice of how to define a name can be non-obvious
+
+<img src="images/incert-sed-ABCD-non-obvious-names.png" width="800" />
+
 
 
