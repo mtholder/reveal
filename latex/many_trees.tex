@@ -23,6 +23,15 @@
 \begin{picture}(0,0)(0,0)  \put(-55,-70){\makebox(0,0)[l]{\includegraphics[scale=1.2]{/home/mtholder/Documents/storage/talks/teaching/sisg2014/sisg2014-Mark/images/gene_tree_sp_tree.pdf}}}
 \end{picture}
 
+\myNewSlide
+
+\begin{picture}(150,120)(0,0)
+    \put(-10,30){\includegraphics[scale=1]{/home/mtholder/Documents/storage/talks/teaching/WoodsHole2018/images/LiEcholocating2010Fig1B.png}}
+     \put(100,-40){\includegraphics[scale=1]{/home/mtholder/Documents/storage/talks/teaching/WoodsHole2018/images/HahnNahklehFig2.png}}
+    \put(-10, -10){Figure 1 from \cite{LiuEtAl2010}}
+    \put(100, -55){Figure 2 from \cite{HahnN2016}}
+\end{picture}
+
 
 \myNewSlide
 \section*{ Inferring a species tree while accounting for the coalescent}
@@ -34,7 +43,7 @@
 
 
 \myNewSlide
-\section*{Considering coalescent effects without modeling gene trees}
+\section*{Considering ILS effects without modeling gene trees}
 \begin{picture}(150,100)(0,0)
     \put(0, 50){\color{blue}SVDQuartets }
     \put(0, 37){\color{blue}(Kubatko + Swofford}
@@ -67,45 +76,12 @@
 \put(-15,-158){\small globin genes in monotremes and therian mammals'' PNAS {\bf 105(5)} 2008}
 \end{picture}
 
-\myNewSlide
-\section*{terminology: trees of gene families}
-\begin{itemize}
-	\item duplication -- the creation of a new copy of a gene within the same genome.
-	\item homologous -- descended from a common ancestor.
-	\item paralogous --  homologous, but resulting from a gene duplication in the common ancestor. 
-	\item orthologous -- homologous, and resulting from a speciation event at the common ancestor.
-\end{itemize}
-
-{\color{blue} Casey Dunn (today) and Laura Eme (next Tuesday)}
-\myNewSlide
-\section*{Joint estimation of gene duplication, loss, and species trees using PHYLDOG}
-\begin{picture}(150,100)(0,0)
-    \put(10,-20){\includegraphics[scale=.90]{/home/mtholder/Documents/storage/talks/teaching/bodega/images/BoussauEtAl2013Fig5.png}}
-    \put(0,-40){\small Figure 2A from \cite{BoussauEtAl2013}}
-\end{picture}
 
 
-\myNewSlide
-(3a) Many types of trees:
-\begin{table}[htdp]
-\begin{center}
-\begin{tabular}{|p{5cm}|p{5cm}|p{11cm}|}
-& {\bf The cause of splitting} & {\bf Important caveats} \\
-\hline
-``Gene tree'' or ``a coalescent'' & DNA replication & recombination is usually ignored \\
-\hline
-Species tree Phylogeny & speciation & recombination, hybridization, lateral gene transfer, and deep coalescence cause conflict in the data we use to estimate phylogenies\\
-\hline
-Gene family tree & speciation or duplication & recombination (eg. domain swapping) is not tree-like \\
-\hline
-\end{tabular}
-\end{center}
-\label{default}
-\end{table}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \myNewSlide
-{\bf \large (3a) Joint estimation of gene duplication, loss, and coalescence with DLCoalRecon}\par\vskip 2em
+{\bf \large  Joint estimation of gene duplication, loss, and coalescence with DLCoalRecon}\par\vskip 2em
 \begin{picture}(150,100)(0,0)
     \put(0,-20){\includegraphics[scale=1.5]{/home/mtholder/Documents/storage/talks/teaching/bodega/images/RasmussenK2012Fig2a.png}}
     \put(0,-40){\small Figure 2A from \cite{RasmussenK2012}}
@@ -113,14 +89,14 @@ Gene family tree & speciation or duplication & recombination (eg. domain swappin
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \myNewSlide
-\section*{(3a) DL models and coalescence}
+\section*{ DL models and coalescence}
 \begin{picture}(150,100)(0,0)
     \put(0,-30){\includegraphics[scale=1.5]{/home/mtholder/Documents/storage/talks/teaching/bodega/images/RasmussenK2012Fig2b.png}}
     \put(0,-40){\small Figure 2B from \cite{RasmussenK2012}}
 \end{picture}
 
 \myNewSlide
-\section*{(3a) Many types of trees: Lateral Gene Transfer}
+\section*{Many types of trees: Lateral Gene Transfer}
 
 {\em tree} - a graph without cycles (loops)\\
 {\em network} - general graph; cycles allowed\\
@@ -137,7 +113,7 @@ Cycles can represent
 {\color{blue} C\'ecile An\'e (next Friday)}
 
 \myNewSlide
-\section*{(3a) Many types of trees: Lateral Gene Transfer}
+\section*{Many types of trees: Lateral Gene Transfer}
 \begin{picture}(150,100)(0,0)
     \put(40,-30){\includegraphics[scale=1.4]{/home/mtholder/Documents/storage/talks/teaching/bodega/images/SzollosiEtAl2013Fig2c.png}}
     \put(0,-50){\small Figure 2c from \cite{SzollosiEtAl2013}}
@@ -166,33 +142,13 @@ Cycles can represent
     \put(0,-70){\small Figure 4 from \cite{NoutahiEtAl2016}}
 \end{picture}
 
-
-
-\myNewSlide
-\section*{Part 3: Phylogenetics is difficult}
-\begin{itemize}
-    \item[{\bf a}.] Many types of trees - species trees {\em vs} ``gene trees'' -- coalescents or ``gene family trees''
-    \item[{\bf b}.] Many sources of error
-    \item[{\bf c}.] No clean sampling theory that gives us clean hypothesis tests
-    \item[{\bf d}.] Computational + statistical difficulties
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \myNewSlide
 \section*{(3b) sources of error cartoon}
 \begin{picture}(150,120)(0,0)
     \put(0,-50){\includegraphics[scale=.9]{/home/mtholder/Documents/storage/talks/teaching/WoodsHole2018/images/source-of-bact-phylo-error-by-lookback-time.pdf}}
 \end{picture}
 
-\myNewSlide
-
-\begin{picture}(150,120)(0,0)
-    \put(-10,30){\includegraphics[scale=1]{/home/mtholder/Documents/storage/talks/teaching/WoodsHole2018/images/LiEcholocating2010Fig1B.png}}
-     \put(100,-40){\includegraphics[scale=1]{/home/mtholder/Documents/storage/talks/teaching/WoodsHole2018/images/HahnNahklehFig2.png}}
-    \put(-10, -10){Figure 1 from \cite{LiuEtAl2010}}
-    \put(100, -55){Figure 2 from \cite{HahnN2016}}
-\end{picture}
-
+\end{document}
 
 \myNewSlide
 \section*{(3c) Hypothesis testing in phylogenetics is tricky}
