@@ -95,7 +95,7 @@ Paraphrasing [Redelings and Holder (2017)](https://peerj.com/articles/3058/),
 the summary tree should:
 
   1. display no unsupported groups,
-  2. defer higher ranked trees,
+  2. defer to higher ranked trees,
   3. be as resolved as feasible, and
   4. displays as many groupings from input trees as possible.
 
@@ -263,6 +263,18 @@ Thanks to NSF and the entire Open Tree of Life team and community volunteers.
 
 
 
+### Challenges in large-scale phylogenetics
+
+  1. Many **types** of trees use
+    * We don't have an overarching probabilistic models across tree types.
+    * hard to learn the pitfalls of all methods
+  2. It is hard to propagate uncertainty. Often we:
+    * ignore uncertainty;
+    * use lots of arbitrary thresholds (e.g P < 0.05);
+    * redo many steps with very similar inputs
+
+
+
 <img src="images/source-of-bact-phylo-error-by-lookback-time.png"/>
 
 
@@ -270,6 +282,14 @@ Thanks to NSF and the entire Open Tree of Life team and community volunteers.
 ### Many types of tree in evo. biology
 
 https://mtholder.github.io/reveal/latex/many_trees.pdf
+
+
+
+### Questions to think about
+
+  1. If a phylogenetic tree is so crucial to answering evolutionary questions, why are trees re-used so infrequently?
+  2. Can we design ways for summarizing interesting aspects of phylogenetic uncertainty?
+
 
 
 
