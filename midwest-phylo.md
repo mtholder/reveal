@@ -102,6 +102,6 @@ If someone has a positive result, what is the chance that they have the disease?
 
 
 
-
-<img src="images/dtdsmarkov.png"/>
+For the next set of slides, see 
+<a href="./midwest-phylo-likelihood.html">midwest-phylo-likelihood.html</a> ...
 
