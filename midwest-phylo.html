@@ -119,15 +119,21 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 <script>
 // More info https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-history: true,
-
-// More info https://github.com/hakimel/reveal.js#dependencies
-dependencies: [
-{ src: 'plugin/markdown/marked.js' },
-{ src: 'plugin/markdown/markdown.js' },
-{ src: 'plugin/notes/notes.js', async: true },
-{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-]
+  history: true,
+  // More info https://github.com/hakimel/reveal.js#dependencies
+  dependencies: [
+    { src: 'plugin/markdown/marked.js' },
+    { src: 'plugin/markdown/markdown.js' },
+    { src: 'plugin/notes/notes.js', async: true },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/math/math.js', async: true }
+    ],
+//  math: {
+//      mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+//      config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+      // pass other options into `MathJax.Hub.Config()`
+//      TeX: { Macros: macros }
+//    }
 });
 </script>
 </body>

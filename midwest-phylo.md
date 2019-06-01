@@ -24,3 +24,12 @@
 
 
 <img src="images/by-paul-lewis/pol-probability-4.png"/>
+
+
+
+`$h_i$`
+
+
+
+<img src="images/dtdsmarkov.png"/>
+
