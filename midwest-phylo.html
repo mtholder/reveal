@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Holder - Open Tree of Life</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/solarized.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<style>
+.divblank {
+width: 500px;
+height: 166px;
+border: 2px solid green;
+color: black;
+}
+.divcomplete {
+width: 500px;
+height: 166px;
+border: 2px solid green;
+box-sizing: border-box;
+background: green;
+color: white;
+}
+.divchar {
+width: 666px;
+height: 166px;
+border: 2px solid blue;
+box-sizing: border-box;
+background: blue;
+color: white;
+}
+.divtaxa {
+width: 500px;
+height: 333px;
+border: 2px solid yellow;
+box-sizing: border-box;
+background: yellow;
+color: blue;
+}
+.divall {
+width: 666px;
+height: 333px;
+border: 2px solid red;
+box-sizing: border-box;
+background: red;
+color: white;
+}
+.borderless {
+border-bottom: none;
+margin: 0px;
+}
+
+.reveal table td.grenzelos {
+text-align: left;
+padding: 0.2em 0.5em 0.2em 0.5em;
+border-bottom: none; }
+
+.reveal section img.grenzelos {
+border: 0;
+box-shadow: none; 
+}
+
+.reveal .slides { 
+  margin-top: -.75em;
+}
+
+</style>
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-markdown>
+      <script type="text/template">
+        ## Basic Probability and Likelihood
+        ### [Midwest Phylogenetics Workshop](https://phylosdd.github.io/MidwestPhylo2019/), June 2019
+
+
+        [Mark T. Holder](http://phylo.bio.ku.edu) Dept of [Ecology and Evolutionary Biology, Univ. Kansas](http://eeb.ku.edu/) and the 
+        [KU Biodiversity Institute](https://biodiversity.ku.edu).
+
+        Many slides from [Paul Lewis](https://phylogeny.uconn.edu/) and some from [Joe Felsenstein](http://evolution.genetics.washington.edu/phylip/felsenstein.html)
+      </script>
+    </section>
+    <section data-markdown>
+      <script type="text/template">
+        ## My Research projects
+
+        Basically... it's "phylogenetic methods"
+
+          * Incorporating fossil data into phylogenetic estimation (collab: Bruce Lieberman, Tracy Heath, Will Pett, April Wright)
+          * Host-parasite coevolution (collab: Kirsten Jensen, Janine Caira, Elizabeth Jockusch, Jeet Sukumaran)
+          * Species delimitation (collab: Jeet Sukumaran, Lacey Knowles)
+          * [Open Tree of Life](https://opentreeoflife.github.io/) (collab: Emily Jane McTavish, Karen Cranston, Ben Redelings, Jim Allman)
+      </script>
+    </section>
+    <section data-markdown="midwest-phylo.md"  
+    data-separator="^\n\n\n"  
+    data-separator-vertical="^\n\n"  
+    data-separator-notes="^Note:"  
+    data-charset="utf-8">
+    </section>
+  </div>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+// More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+history: true,
+
+// More info https://github.com/hakimel/reveal.js#dependencies
+dependencies: [
+{ src: 'plugin/markdown/marked.js' },
+{ src: 'plugin/markdown/markdown.js' },
+{ src: 'plugin/notes/notes.js', async: true },
+{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+]
+});
+</script>
+</body>
+</html>
