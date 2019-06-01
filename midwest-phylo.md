@@ -42,7 +42,7 @@ If someone has a positive result, what is the chance that they have the disease?
 `\begin{eqnarray}
 \Pr(D) & = & 0.08 \\
 \Pr(+\mid H) & = & 0.1 \\
-\Pr(-\mid D) & = & 0.0.5 \\
+\Pr(-\mid D) & = & 0.05 \\
 \Pr(D\mid +) & = & ?
 \end{eqnarray}`
 
