@@ -61,12 +61,45 @@ If someone has a positive result, what is the chance that they have the disease?
 
 ### Law of total probability
 `\begin{eqnarray}
-\Pr(A) & = & \sum_{i\in\mathcal{B}} {\Pr(A\mid B=i)}{\Pr(B=i)}\\
+\Pr(A) & = & \sum_{i\in\mathcal{B}} {\Pr(A\mid B=i)}{\Pr(B=i)}
 \end{eqnarray}`
 
 `\begin{eqnarray}
-\Pr(+) & = & \Pr(+\mid H)\Pr(H) + \Pr(+\mid D)\Pr(D)
+\Pr(+) & = & \Pr(+\mid H)\Pr(H) + \Pr(+\mid D)\Pr(D) \\
+& = & 0.1\times 0.92 + 0.95\times 0.08 \\
+& = & 0.168
 \end{eqnarray}`
+
+
+
+
+### Bayes' rule (again)
+`\begin{eqnarray}
+\Pr(D\mid +)  & = & \frac{\Pr(D,+)}{\Pr(+)} \\
+\Pr(+) & = & 0.168 \\
+\Pr(D,+) & = & 0.95\times 0.08 = 0.076 \\
+\Pr(D\mid +)  & = & 0.076 / 0.168 \\
+& = & 0.452
+\end{eqnarray}`
+
+
+
+
+<a href="./bayesgraph.html" target="_blank">Bayes' rule graphically</a>
+
+
+
+
+### Bayes' rule
+`\begin{eqnarray}
+\Pr(D\mid +)  & = & \frac{\Pr(D,+)}{\Pr(+)} \\
+\Pr(+) & = & 0.168 \\
+\Pr(D,+) & = & 0.95\times 0.08 = 0.076 \\
+\Pr(D\mid +)  & = & 0.076 / 0.168 \\
+& = & 0.452
+\end{eqnarray}`
+
+
 
 
 

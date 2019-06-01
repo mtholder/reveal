@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Holder - Probability</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/solarized.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<style>
+.divblank {
+width: 500px;
+height: 166px;
+border: 2px solid green;
+color: black;
+}
+.divcomplete {
+width: 500px;
+height: 166px;
+border: 2px solid green;
+box-sizing: border-box;
+background: green;
+color: white;
+}
+.divchar {
+width: 666px;
+height: 166px;
+border: 2px solid blue;
+box-sizing: border-box;
+background: blue;
+color: white;
+}
+.divtaxa {
+width: 500px;
+height: 333px;
+border: 2px solid yellow;
+box-sizing: border-box;
+background: yellow;
+color: blue;
+}
+.divall {
+width: 666px;
+height: 333px;
+border: 2px solid red;
+box-sizing: border-box;
+background: red;
+color: white;
+}
+.borderless {
+border-bottom: none;
+margin: 0px;
+}
+
+.reveal table td.grenzelos {
+text-align: left;
+padding: 0.2em 0.5em 0.2em 0.5em;
+border-bottom: none; }
+
+.reveal section img.grenzelos {
+border: 0;
+box-shadow: none; 
+}
+
+.reveal .slides { 
+  margin-top: -.75em;
+}
+
+</style>
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</head>
+<body>
+<div class="reveal">
+  <style>
+    .smalltext { font: italic 20px sans-serif; }
+</style>
+
+<svg width="650" height="700">
+  <rect x="60" y="10" width="500" height="500" style="fill:rgb(255,255,255);stroke:none"/>
+  <rect visibility="hidden" id="diseased" x="520" y="10" width="40" height="500" style="fill:rgb(100,100,255);stroke:none" fill-opacity="50%"/>
+  <rect visibility="hidden" id="poshealthy" x="60" y="460" width="460" height="50" style="fill:rgb(255,100,100);stroke:none" fill-opacity="50%"/>
+  <rect visibility="hidden" id="posdiseased" x="520" y="35" width="40" height="475" style="fill:rgb(200,100,200);stroke:none" fill-opacity="50%"/>
+  <rect visibility="hidden" id="allhealthyline" x="60" y="10" width="460" height="500" style="fill:none;stroke-width:3;stroke:rgb(0,0,0)"/>
+  <rect visibility="hidden" id="alldiseasedline" x="520" y="10" width="40" height="500" style="fill:none;stroke-width:3;stroke:rgb(0,0,0)"/>
+  <rect visibility="hidden" id="poshealthyline" x="60" y="460" width="460" height="50" style="fill:none;stroke-width:3;stroke:rgb(0,0,0)"/>
+  <rect visibility="hidden" id="posdiseasedline" x="520" y="35" width="40" height="475" style="fill:none;stroke-width:3;stroke:rgb(0,0,0)"/>
+  <rect visibility="hidden" id="allpeopleline" x="60" y="10" width="500" height="500" style="fill:none;stroke-width:3;stroke:rgb(0,0,0)"/>
+  <path visibility="hidden" id="allposline" d="M60 460 L 520 460 L 520 35 L 560 35 L 560 510 L 60 510 Z" style="fill:none;stroke-width:3;stroke:rgb(0,0,0)"/>
+  <rect visibility="visible" id="outline" x="60" y="10" width="500" height="500" style="fill:none;stroke-width:1;stroke:rgb(150,150,150)"/>
+
+  <text visibility="hidden" id="diseasednum" y="540" x="500" class="smalltext" fill="black">0.92</text>
+  <text visibility="hidden" id="poshealthynum" y="467" x="10" class="smalltext" fill="black">0.1</text>
+  <text visibility="hidden" id="posdiseasednum" y="45" x="570" class="smalltext" fill="black">0.95</text>
+  <!--text visibility="hidden" id="diseasedgposnum" y="540" x="500"class="smalltext" fill="black">0.452</text!-->
+
+  <text y="600" x="80" class="smalltext" onclick="pofdclick()" fill="rgb(100,100,255)">P(D) = 0.08</text>
+  <text y="600" x="220" class="smalltext" onclick="pofposghclick()" fill="rgb(255,100,100)">P(+|H) = 0.1</text>
+  <text y="600" x="400" class="smalltext" onclick="pofposgdclick()" fill="rgb(200,100,200)">P(+|D) = 0.95</text>
+  <text y="650" x="80" class="smalltext" onclick="pofdgposclick()" fill="rgb(200,100,200)">P(D|+) = (0.95*0.08)/(0.95*0.08 + .1*0.92) = 0.452</text>
+</svg>
+<p>
+<a href="./midwest-phylo.html#/14">Click here for the non-graphical version</a>
+</p>
+<script>
+var pofdvis = false;
+var oppvisvalue = function(b) {
+  return (b ? "hidden" : "visible");
+};
+var samevisvalue = function(b) {
+  return (b ? "hidden" : "visible");
+};
+
+var boxesoff = function() {
+  document.getElementById("allpeopleline").setAttribute("visibility", "hidden");
+  document.getElementById("allhealthyline").setAttribute("visibility", "hidden");
+  document.getElementById("alldiseasedline").setAttribute("visibility", "hidden");
+  document.getElementById("poshealthyline").setAttribute("visibility", "hidden");
+  document.getElementById("posdiseasedline").setAttribute("visibility", "hidden");
+  document.getElementById("allposline").setAttribute("visibility", "hidden");
+
+  document.getElementById("diseasednum").setAttribute("visibility", "hidden");
+  document.getElementById("poshealthynum").setAttribute("visibility", "hidden");
+  document.getElementById("posdiseasednum").setAttribute("visibility", "hidden");
+  //document.getElementById("diseasedgposnum").setAttribute("visibility", "hidden");
+  
+};
+
+var pofdclick = function() {
+  boxesoff();
+  document.getElementById("diseased").setAttribute("visibility", "visible");
+  document.getElementById("diseasednum").setAttribute("visibility", "visible");
+  document.getElementById("posdiseased").setAttribute("visibility", "hidden");
+  document.getElementById("poshealthy").setAttribute("visibility", "hidden");
+  document.getElementById("allpeopleline").setAttribute("visibility", "visible");
+  pofdvis = true;
+};
+
+var pofposgdclick = function() {
+  if (!pofdvis) {
+    pofdclick();
+  }
+  boxesoff();
+  document.getElementById("posdiseased").setAttribute("visibility", "visible");
+  document.getElementById("posdiseasednum").setAttribute("visibility", "visible");
+  document.getElementById("alldiseasedline").setAttribute("visibility", "visible");
+};
+
+var pofposghclick = function() {
+  if (!pofdvis) {
+    pofdclick();
+  }
+  boxesoff();
+  document.getElementById("poshealthy").setAttribute("visibility", "visible");
+  document.getElementById("poshealthynum").setAttribute("visibility", "visible");
+  document.getElementById("allhealthyline").setAttribute("visibility", "visible");
+};
+
+var pofdgposclick = function() {
+  pofposgdclick();
+  pofposghclick();
+  boxesoff();
+  document.getElementById("poshealthy").setAttribute("visibility", "visible");
+  document.getElementById("posdiseased").setAttribute("visibility", "visible");
+  //document.getElementById("diseasedgposnum").setAttribute("visibility", "visible");
+  document.getElementById("allposline").setAttribute("visibility", "visible");
+};
+
+</script>
+</script>
+</body>
+</html>
