@@ -1,5 +1,9 @@
 # Reveal-based slides by Mark T. Holder
 
+The slides written by Mark Holder are open source. See the [LICENSE-for-slides](./LICENSE-for-slides)
+file, but not the *caveat* that some images were created by others (and used by Mark Holder
+with permission from those authors).
+
 The [gh-pages](https://github.com/mtholder/reveal/tree/gh-pages) branch of 
 this repo is deployed to https://mtholder.github.io/reveal/
 
