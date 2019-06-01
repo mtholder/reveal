@@ -56,18 +56,50 @@ L(\theta)  =  \Pr(X\mid \theta) & = & \prod_{i=1}^n \Pr(x_i \mid \theta)
 
 ### Toy example: serial sampling of 1 site over time
 
-Imagine:
-
-  * we observe a lineage evolving.
+  * We observe a lineage evolving.
   * Every 10,000 generations we sequence the locus, and note what
-	base is at our site of interest. (I guess we have a 
-	time machine - 😎)
-  * We want to estimate the **probability that the site will be different
+	base is at our site of interest.
+  * I guess we have a time machine 😎
+  * Click [here](http://phylo.bio.ku.edu/mephytis/tex/discrete-time-and-state-Markov.pdf)  for a more detailed write up
+  * We want to estimate "*s*", the **probability that the site will be different
 	the next time we sample**.
-
-([more detailed write up](http://phylo.bio.ku.edu/mephytis/tex/discrete-time-and-state-Markov.pdf))
-
+  * Our data might look like: <tt>GGCCCCCCCA</tt> for 10 sample points
 
 
-<img src="images/dtdsmarkov.png"/>
 
+### Toy example: Simplest model
+  * *s* is the same over every interval between adjacent samples
+  * each alternative base is equally likely whenever a substitution occurs.
+
+<img class="grenzelos" height="700" src="images/dtdsmarkov.png"/>
+
+
+
+*X* = <tt>GGCCCCCCCA</tt>, or (for indexing):
+
+| i | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `$x_i$` | G | G | C | C | C | C | C | C | C | A |
+
+What is `$Pr(X \mid s)$` ? <br />
+<img class="grenzelos" height="700" src="images/dtdsmarkov.png"/>
+
+
+
+| i | 1 | 2 | 3 | 4 | 5 |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| `$x_i$` | G | G | C | C | C |
+| `$\Pr(x_i\mid s)$` | `$\left(\frac{1}{4}\right)$` | `$\left(1-s\right)$` | `$\left(\frac{s}{3}\right)$` | `$\left(1 - s\right)$` | `$\left(1 - s\right)$` |
+
+  * `$n_d$` = number of adjacent sites that are different
+  * `$n_s$` = number of adjacent sites that are same
+`\begin{eqnarray}
+L(s)  =  \Pr(X\mid s) & = & \prod_{i=1}^n \Pr(x_i \mid s) \\
+& = & \frac{1}{4} (1-s)^{n_d}\left(\frac{s}{3}\right)^{n_s}
+\end{eqnarray}`
+
+
+
+### Demo
+
+Checkout <a href="http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/index.html" target="_blank">http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/index.html</a>
