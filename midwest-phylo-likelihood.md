@@ -103,3 +103,9 @@ L(s)  =  \Pr(X\mid s) & = & \prod_{i=1}^n \Pr(x_i \mid s) \\
 ### Demo
 
 Checkout <a href="http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/index.html" target="_blank">http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/index.html</a>
+
+
+
+### Missing data Demo
+
+Also note the ML deals with missing data nicely <a href="http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/missing.html" target="_blank">http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/missing.html</a>
