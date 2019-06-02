@@ -67,7 +67,7 @@ L(\theta)  =  \Pr(X\mid \theta) & = & \prod_{i=1}^n \Pr(x_i \mid \theta)
 
 
 
-### Toy example: Simplest model
+**Toy example: Simplest model**
   * *s* is the same over every interval between adjacent samples
   * each alternative base is equally likely whenever a substitution occurs.
 
@@ -89,7 +89,7 @@ What is `$Pr(X \mid s)$` ? <br />
 | i | 1 | 2 | 3 | 4 | 5 |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | `$x_i$` | G | G | C | C | C |
-| `$\Pr(x_i\mid s)$` | `$\left(\frac{1}{4}\right)$` | `$\left(1-s\right)$` | `$\left(\frac{s}{3}\right)$` | `$\left(1 - s\right)$` | `$\left(1 - s\right)$` |
+| `$\Pr(x_i\mid s) =$` | `$\left(\frac{1}{4}\right)$` | `$\left(1-s\right)$` | `$\left(\frac{s}{3}\right)$` | `$\left(1 - s\right)$` | `$\left(1 - s\right)$` |
 
   * `$n_d$` = number of adjacent sites that are different
   * `$n_s$` = number of adjacent sites that are same
@@ -109,3 +109,20 @@ Checkout <a href="http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/i
 ### Missing data Demo
 
 Also note the ML deals with missing data nicely <a href="http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/missing.html" target="_blank">http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/missing.html</a>
+
+
+
+**A more difficult inference problem**
+
+  * Previous demos were discrete-state, discrete-time Markov
+	model.
+  * In phylogenetics we often deal with hidden Markov models, which
+  have states that we cannot observe.
+
+<img class="grenzelos" height="700" src="images/hiddenmarkov.png"/>
+
+
+
+
+Check out <a target="_blank" href="https://github.com/mtholder/urn_demo/blob/master/README.md">https://github.com/mtholder/urn_demo/blob/master/README.md</a>
+for a instructions for a hands-on demo.
