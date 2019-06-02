@@ -119,10 +119,41 @@ Also note the ML deals with missing data nicely <a href="http://phylo.bio.ku.edu
   * In phylogenetics we often deal with hidden Markov models, which
   have states that we cannot observe.
 
-<img class="grenzelos" height="700" src="images/hiddenmarkov.png"/>
+<img class="grenzelos" height="800" src="images/hiddenmarkov.png"/>
 
 
 
 
 Check out <a target="_blank" href="https://github.com/mtholder/urn_demo/blob/master/README.md">https://github.com/mtholder/urn_demo/blob/master/README.md</a>
 for a instructions for a hands-on demo.
+
+
+
+### Demo Takehome messages #1
+
+Max. Likelihood is quite powerful and generalizable means of making estimation and testing
+
+
+
+
+### Demo Takehome messages #2
+
+  * The power to learn one model/parameter can be strongly influenced by other parameters
+  in the model.
+  * Imagine if both urns had 4 orange and 4 green beads. Could you estimate *s*?
+  * When designing a study - you need to have a good sense of where the 
+  signal is coming from!
+
+
+
+
+### Demo Takehome messages #3
+
+  * The power to learn one model/parameter can be strongly influenced by stochastic events
+  * If each urn had exactly 1 "contaminant" can you be confident that *C=1*?
+  * When designing a study - you need to have a good sense of where the 
+  signal is coming from!
+
+
+
+<img class="grenzelos" height="800" src="images/by-joe-felsenstein/joe-conc-changes.png"/>
