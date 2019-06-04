@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Holder - Probability</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/solarized.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<style>
+.divblank {
+width: 500px;
+height: 166px;
+border: 2px solid green;
+color: black;
+}
+.divcomplete {
+width: 500px;
+height: 166px;
+border: 2px solid green;
+box-sizing: border-box;
+background: green;
+color: white;
+}
+.divchar {
+width: 666px;
+height: 166px;
+border: 2px solid blue;
+box-sizing: border-box;
+background: blue;
+color: white;
+}
+.divtaxa {
+width: 500px;
+height: 333px;
+border: 2px solid yellow;
+box-sizing: border-box;
+background: yellow;
+color: blue;
+}
+.divall {
+width: 666px;
+height: 333px;
+border: 2px solid red;
+box-sizing: border-box;
+background: red;
+color: white;
+}
+.borderless {
+border-bottom: none;
+margin: 0px;
+}
+
+.reveal table td.grenzelos {
+text-align: left;
+padding: 0.2em 0.5em 0.2em 0.5em;
+border-bottom: none; }
+
+.reveal section img.grenzelos {
+border: 0;
+box-shadow: none; 
+}
+
+.reveal .slides { 
+  margin-top: -1em;
+}
+
+</style>
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-markdown="john-huelsenbeck-dice.md"  
+    data-separator="^\n\n\n"  
+    data-separator-vertical="^\n\n"  
+    data-separator-notes="^Note:"  
+    data-charset="utf-8">
+    </section>
+  </div>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+// More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  history: true,
+  // More info https://github.com/hakimel/reveal.js#dependencies
+  dependencies: [
+    { src: 'plugin/markdown/marked.js' },
+    { src: 'plugin/markdown/markdown.js' },
+    { src: 'plugin/notes/notes.js', async: true },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/math/math.js', async: true }
+    ],
+//  math: {
+//      mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+//      config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+      // pass other options into `MathJax.Hub.Config()`
+//      TeX: { Macros: macros }
+//    }
+});
+</script>
+</body>
+</html>
