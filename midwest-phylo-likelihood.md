@@ -99,7 +99,7 @@ What is `$Pr(X \mid s)$` ? <br />
   * `$n_s$` = number of adjacent sites that are same
 `\begin{eqnarray}
 L(s)  =  \Pr(X\mid s) & = & \prod_{i=1}^n \Pr(x_i \mid s) \\
-& = & \frac{1}{4} (1-s)^{n_d}\left(\frac{s}{3}\right)^{n_s}
+& = & \frac{1}{4} (1-s)^{n_s}\left(\frac{s}{3}\right)^{n_d}
 \end{eqnarray}`
 
 

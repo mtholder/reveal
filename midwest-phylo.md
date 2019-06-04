@@ -123,7 +123,7 @@ Imagine you perform independent trials until your first success.
 If the probability of a success on each trial is *p*, what is the
 probability that the first success will occur on trial *k*? (waiting time=*k* trials)
 <br />**Geometric distribution:**
-`$$\Pr(k\mid p) = (1-p)^{k-1}p^k $$`
+`$$\Pr(k\mid p) = (1-p)^{k-1}p $$`
 <img src="images/wikimedia/Geometric_pmf.svg"/>
 
 
