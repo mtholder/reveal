@@ -54,6 +54,10 @@ L(\theta)  =  \Pr(X\mid \theta) & = & \prod_{i=1}^n \Pr(x_i \mid \theta)
 
 
 
+<img src="images/by-paul-lewis/log-scale.png" />
+
+
+
 ### Toy example: serial sampling of 1 site over time
 
   * We observe a lineage evolving.
