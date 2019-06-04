@@ -122,8 +122,8 @@ success (call that *p*), what is the probability of exactly *k* successes?
 Imagine you perform independent trials until your first success.
 If the probability of a success on each trial is *p*, what is the
 probability that the first success will occur on trial *k*? (waiting time=*k* trials)
-<br />**Binomial distribution:**
-`$$\Pr(k\mid p) = p^k (1-p)^{k-1}$$`
+<br />**Geometric distribution:**
+`$$\Pr(k\mid p) = (1-p)^{k-1}p^k $$`
 <img src="images/wikimedia/Geometric_pmf.svg"/>
 
 
@@ -135,6 +135,70 @@ that exactly *k* events occur?
 `$$\Pr(k\mid \lambda) = \frac{\lambda^k e^{-\lambda}}{k!}$$`
 <img src="images/wikimedia/Poisson_pmf.svg"/>
 
+
+
+### Continuous probability distributions
+Used when the random variable can be any number on a part 
+of the number line (not restricted to integers)
+
+
+
+<img src="images/by-paul-lewis/probability-density-0.png"/>
+
+
+
+<img src="images/by-paul-lewis/probability-density-1.png"/>
+
+
+
+<img src="images/by-paul-lewis/probability-density-2.png"/>
+
+
+
+<img src="images/by-paul-lewis/probability-density-3.png"/>
+
+
+
+<img src="images/by-paul-lewis/probability-density-4.png"/>
+
+
+
+<img src="images/by-paul-lewis/probability-density-5.png"/>
+
+
+
+### Some Common Continuous Probaility Distributions...
+
+(once again, with nice images from the wonderful folks who contribute to Wikipedia)...
+
+
+
+If *x* is the sum of a very large number of random variables,
+it will follow the 
+<br />**Normal distribution:**
+`$$f(x\mid \mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$`
+<img src="images/wikimedia/Normal_Distribution_PDF.svg"/>
+
+
+
+If events occur at a constant rate `$\lambda$`, and
+*x* is the 
+waiting time to the first event, *x* will follow the:
+<br />**Exponential distribution:**
+`$$f(x\mid \lambda) = \lambda e^{-\lambda x}$$`
+<img src="images/wikimedia/Exponential_pdf.svg"/>
+
+
+The exponential is the continuous form of the geometric distribution:
+<img src="images/wikimedia/Geometric_pmf.svg"/>
+
+
+
+
+If *x* is the sum of *k* Exponential(`$\lambda = 1/\theta$`) variables,
+*x* will follow a  **Gamma distribution:**
+`$$f(x\mid k, \lambda) = \frac{\lambda^k}{\Gamma(k)} x^{k-1} e^{-\lambda x}$$`
+<img height="450" src="images/wikimedia/Gamma_distribution_pdf.svg"/>
 
 
 
