@@ -130,7 +130,7 @@ can be easily extended.
 
 
 
-### Everything in python has a type
+#### Everything in python has a type
     a = 34
     b = "34"
     c = [3, 4]
@@ -144,8 +144,8 @@ The `class` statement lets you create a new type <small>(sort of - there is slig
 
 
 
-### Basic syntax
-    class <i>SomeName</i>(<i>SomeParentClassName</i>):
+#### Basic syntax
+    class SomeName(SomeParentClassName):
         pass
   * defines a class called <i>SomeName</i>.
   * says that the new class will inherit behavior from the parent class <i>SomeParentClassName</i>
@@ -155,17 +155,18 @@ The `class` statement lets you create a new type <small>(sort of - there is slig
 
 
 
-### Creating instances of your class
+#### Creating instances of your class
     class Person:
         pass
 
     me = Person()
     a = int("34")
+    b = str("34")
     c = list("34")
 
 
 
-### Even an empty class can be useful as organization
+#### Even an empty class can be useful as organization
     me = Person()
     me.age = 49
     me.name = "Mark Holder"
@@ -180,7 +181,7 @@ but it is very similar, see:
 
 
 
-### The "dot" notation is for "attribute" access
+#### The "dot" notation is for "attribute" access
     me.age                  # preferred syntax
     getattr(me, "age")      # same, and occassionally useful
     me.__dict__["age"]      # same in _some_ cases 
@@ -190,3 +191,77 @@ but it is very similar, see:
     setattr(me, "age", 50)  # same, and occassionally useful
     me.__dict__["age"] = 50 # same in _some_ cases 
     setattr(me, age, 50)    # WRONG
+
+
+
+#### A `def` inside a `class` creates a "method" - a special "bound"  function
+    class Person:
+        def compose_full_name(self):
+            n = "{} {}".format(self.first_name, self.last_name)
+            return n
+    me = Person()
+    me.first_name = "Mark"
+    me.last_name = "Holder"
+    me.compose_full_name()      # Call the method. no arg in ()
+    me
+    me.compose_full_name        # It is a method bound to "me"
+    Person.compose_full_name    # We defined the func in a class
+    Person.compose_full_name()  # Needs an arg if called as func
+    Person.compose_full_name(me) # this works, but is awkward
+
+
+
+#### methods
+  * a class's function called by `instance.func_name()`
+  * binds the `instance` to the first argument: `self`
+  * used to provide a generic behavior with the data bundled in the `self` object.
+
+<small>Technically, the first argument doesn't _have_ to be called `self`, but don't violate this convention</small>
+
+
+
+
+#### Special methods
+  * in double underscores, "dunderscores": \_\_somename\_\_
+  * usually not called in the normal way - interact with some core aspects of python dealing with objects
+  * Often only need:
+    * `__init__`  initializer called during `Person()`
+    * `__str__`  returns a string form of the instance
+
+
+
+#### `Person` class within init to validate
+
+    class Person:
+        def __init__(self, first, last):
+            for i in [first, last]:
+              if not isinstance(i, str):
+                  raise TypeError("Expecting string names, got {}".format(i))
+            self.first_name = first
+            self.last_name = last
+        def compose_full_name(self):
+            n = "{} {}".format(self.first_name, self.last_name)
+            return n
+    me = Person(first="Mark", last="Holder")
+    me.compose_full_name()
+    someone = Person("Joe", "Biden")
+    arg_checking = Person("Louis", 14)
+
+
+
+
+#### The @property can provide an pseudo-attribute
+    class Person:
+        ...
+        @property
+        def full_name(self):
+            n = "{} {}".format(self.first_name, self.last_name)
+            return n
+
+    me = Person(first="Mark", last="Holder")
+    me.full_name                  # really is a method call
+    me.first_name = "Bill"
+    me.full_name                  # See! calculated on the fly
+    me.__dict__                   # full_name is not stored data
+    me.full_name = "Jorge Holder" # simple props are read-only
+
