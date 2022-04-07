@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Excercise 1 on python classes</title>
+	</head>
+	<body>
+	<p>Download <a href="./exercise-01.py">exercise-01.py</a></p>
+	<p>There is a lot of code there. You don't need to understand it all.
+	Here are the basics:</p>
+	<ol>
+	 <li>This is the start of a simulator of organisms moving around a landscape. The landscape is grid. A class Landscape is written for you to hold all of the Organisms and all of the patches of habitat in the grid.</li>
+	 <li>There is a Patch class. Each patch of habitat is an instance of that class.</li>
+	 <li>The Organism class is not written. <b>You need to write an Organism class</b>
+	 <li>You should look at the <code>main</code> to see what the program does</li>
+	 </ol> 
+	 <p>If you were to read every bit of code (I don't recommend doing that), you'd see that:
+	 	<ul>
+	 		<li>Organism instances are created in Landscape.create_organisms with a call <br/>
+	 		<code>Organism(rand_patch)</code><br /> where rand_patch is a Patch instance where the organism lives at the start</li>
+	 		<li>In do_random_organism_movement to control dispersal, the code expects each organism to have a postive integer in an attribute <br />
+	 			<code>num_patches_to_disperse</code>
+	 			<br /></li>
+	 		<li>Patches keep track of what organisms are in them, if you call the patch's <br /><code>add_organism</code><br />and pass in the organism.
+	 		</li></ul>
+	 </p>
+	 <p>So... At the top you need to replace <b>CODE HERE</b> with python code to<br />
+<pre>
+# Create a new Organism class
+# create an initializer that takes a Patch 
+#   instance as an argument and stores
+#   it as a "patch" attribute
+# Set a "num_patches_to_disperse" attribute
+#   to be a positive integer (not huge, let's say < 10)
+# Note that there is an add_organism method in Patch
+#   as the last step in the initialize routine for 
+#   the Organism, each instance should add itself
+#   to its patch using this method.
+</pre>
+</p>
+
+<p>When done see <a href="./index.html">index of exercises</a></p>
+	</body>
+</html>
