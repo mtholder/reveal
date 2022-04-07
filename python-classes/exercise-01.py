@@ -17,6 +17,7 @@ CODE HERE
 
 
 EXERCISE_4 = False
+#org_class_list = []
 
 class Patch:
     """Represents a cell in the grid of the entire Landscape."""
