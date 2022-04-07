@@ -17,7 +17,7 @@ class Patch:
         org.patch = self 
 
     def remove_organism(self, org):
-        if org in self.organisms:
+        while org in self.organisms:
             self.organisms.remove(org)
 
     def random_neighbor(self):
@@ -140,11 +140,15 @@ def do_random_organism_movement(organism):
 
 class Organism:
     CODE HERE
-    # create an initializer that 
-    # takes a Patch instance as an argument and
-    #   stores it as a "patch" attribute
+    # create an initializer that takes a Patch 
+    #   instance as an argument and stores
+    #   it as a "patch" attribute
     # Set a "num_patches_to_disperse" attribute
-    # to be a positive integer (not huge, let's say < 10)
+    #   to be a positive integer (not huge, let's say < 10)
+    # Note that there is an add_organism method in Patch
+    #   as the last step in the initialize routine for 
+    #   the Organism, each instance should add itself
+    #   to its patch using this method.
 
 
 def main():
