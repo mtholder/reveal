@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Excercise 1 on python classes</title>
+	</head>
+	<body>
+	<p>Using the same code, uncomment the line with <code>self.do_rand_interactions()</code></p>
+	<p>To make the program work now, you have to:</p>
+	<ol>
+	 <li>Add a boolean <code>alive</code> attribute to the Organism with the initial setting being True.
+	 </li>
+	 <li>Add a <code>do_interaction</code> method to Organism that takes another organism in the same patch as an argument.</li>
+	</ol>
+	 
+	 <p>I'd recommend having some interaction like:
+	 	<ul><li>each organism starts with a random energy (<code>random.random()</code> returns a random number between 0 and 1),</li>
+	 		<li>in the <code>do_interaction</code>, one organism tries to eat the other. If it has higher energy, it succeeds.</li>
+	 		<li>If an organism dies, you should remove it from its patch and set its alive attribute to False</li></ul>
+</p>
+<p>When done see <a href="./index.html">index of exercises</a></p>
+	</body>
+</html>

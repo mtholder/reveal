@@ -265,3 +265,34 @@ but it is very similar, see:
     me.__dict__                   # full_name is not stored data
     me.full_name = "Jorge Holder" # simple props are read-only
 
+
+
+#### Attribute access cascade
+For the code <code>o.foo</code> where <code>o</code> is an instance of class <code>X</code> , Python follows a cascade stopping at the first success:
+  1. checks if <code>foo</code> is a property of <code>X</code>
+  2. checks for <code>"foo"</code> in <code>o.__dict__</code>
+  3. check if  <code>foo</code> is defined in  <code>X</code>
+  4. check if  <code>foo</code> is defined in a parent class of <code>X</code>
+
+
+
+
+#### example
+    class A:
+        def greet(self):
+            print("hi from A", self)
+      
+    class B(A):
+        def greet(self):
+            print("hi from B", self)
+      
+    class C(A):
+        pass
+      
+    a = A(); b = B(); c = C()
+    a.greet(); b.greet(); c.greet()
+
+
+
+#### Exercises
+See <a href="./python-classes/index.html">./python-classes/index.html</a>

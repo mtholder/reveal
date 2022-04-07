@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import random
 
+
+
 CODE HERE
 # Create a new Organism class
 # create an initializer that takes a Patch 
@@ -14,6 +16,7 @@ CODE HERE
 #   to its patch using this method.
 
 
+EXERCISE_4 = False
 
 class Patch:
     """Represents a cell in the grid of the entire Landscape."""
@@ -32,6 +35,7 @@ class Patch:
     def remove_organism(self, org):
         while org in self.organisms:
             self.organisms.remove(org)
+        org.patch = None
 
     def random_neighbor(self):
         r = random.random()
@@ -45,8 +49,6 @@ class Patch:
         else:
             y += 1
         return self._grid.patch_at(x, y)
-
-            
  
     def str_block(self):
         """Returns a list of strings describing the cell and the max str len."""
@@ -54,6 +56,13 @@ class Patch:
         loc_str = "@({},{})".format(self.x, self.y)
         m = max(len(num_org_str), len(loc_str))
         return [num_org_str, loc_str], m
+
+    def get_random_org_avoiding(self, avoid_org):
+        others = [org for org in self.organisms if org is not avoid_org]
+        if len(others) == 0:
+            return None
+        return random.choice(others)
+
 
 class Landscape:
     """A wrapped rectangle of patches meant to represent a spatial landscape"""
@@ -95,9 +104,11 @@ class Landscape:
     def create_organisms(self, num):
         for i in range(num):
             rand_patch = random.choice(self._all_patches)
-            # Part 2: org_class = random.choice(org_class_list)
-            # Part 2: new_org = org_class()
-            new_org = Organism(rand_patch)
+            if EXERCISE_4:
+                org_class = random.choice(org_class_list)
+                new_org = org_class(rand_patch)
+            else:
+                new_org = Organism(rand_patch)
             self.organisms.append(new_org)
 
     def show(self):
@@ -138,6 +149,39 @@ class Landscape:
     def next_step(self):
         for org in self.organisms:
             do_random_organism_movement(org)
+        #self.do_rand_interactions()
+        #self.do_reproduction()
+
+    def check(self):
+        for o in self.organisms:
+            assert o.alive
+            assert o in o.patch.organisms
+            for p in self._all_patches:
+                if o.patch is not p:
+                    try:
+                        assert o not in p.organisms
+                    except:
+                        print(o, "is in", p)
+                        raise
+
+    def do_rand_interactions(self):
+        before = list(self.organisms)
+        for org in before:
+            if org.alive:
+                patch = org.patch
+                other = patch.get_random_org_avoiding(org)
+                if other is not None:
+                    org.do_interaction(other)
+        self.organisms = []
+        for org in before:
+            if org.alive:
+                self.organisms.append(org)
+
+    def do_reproduction(self):
+        new_orgs = []
+        for org in self.organisms:
+            new_orgs.extend(org.reproduce())
+        self.organisms.extend(new_orgs)
 
 def do_random_organism_movement(organism):
     """Checks num_patches_to_disperse and makes that number of random movements."""
@@ -147,6 +191,7 @@ def do_random_organism_movement(organism):
         new_patch = patch.random_neighbor()
         patch.remove_organism(organism)
         new_patch.add_organism(organism)
+        patch = new_patch
 
 
 def main():
