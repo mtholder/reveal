@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 import random
 
+CODE HERE
+# Create a new Organism class
+# create an initializer that takes a Patch 
+#   instance as an argument and stores
+#   it as a "patch" attribute
+# Set a "num_patches_to_disperse" attribute
+#   to be a positive integer (not huge, let's say < 10)
+# Note that there is an add_organism method in Patch
+#   as the last step in the initialize routine for 
+#   the Organism, each instance should add itself
+#   to its patch using this method.
+
+
 
 class Patch:
     """Represents a cell in the grid of the entire Landscape."""
@@ -134,21 +147,6 @@ def do_random_organism_movement(organism):
         new_patch = patch.random_neighbor()
         patch.remove_organism(organism)
         new_patch.add_organism(organism)
-
-
-
-
-class Organism:
-    CODE HERE
-    # create an initializer that takes a Patch 
-    #   instance as an argument and stores
-    #   it as a "patch" attribute
-    # Set a "num_patches_to_disperse" attribute
-    #   to be a positive integer (not huge, let's say < 10)
-    # Note that there is an add_organism method in Patch
-    #   as the last step in the initialize routine for 
-    #   the Organism, each instance should add itself
-    #   to its patch using this method.
 
 
 def main():
