@@ -1,298 +1,71 @@
-### Hi!
-  * [Mark T. Holder](https://phylo.bio.ku.edu)
-  * computational evolutionary biologist in EEB and the BI
-  * https://orcid.org/0000-0001-5575-0536
+#### Problems in scientific publishing
+  * Peer review
+    * quality / fairness
+    * speed
+  * Perverse incentives in publishing
+  * Replication crisis
+    * data/script availability
+    * fraud
+    * _p_-hacking
+    * _p_-value ≠ Prob(null is true)
+    * machine learning / computer generated proofs
 
 
 
-### Overview
- * Reasons to use classes:
-   * organization
-   * bundling data together
-   * encapsulation
-   * modularity
- * Learning how to define and use classes in python.
-   * Basic syntax
-   * instance vs class
-   * cascade of attribute lookup
+#### Peer review
+  * listing # of reviews on annual report does not incentivize quality.
+  * in anonymous peer review, only the editor will know who is doing a poor job.
+  * A manuscript may get 2-3 reviews from many journals as author re-submit
 
 
 
+#### Alternatives
+Open Peer review
+  * https://plos.org/resource/open-peer-review/
 
-### #1 Organization
-    from dendropy import Tree
+Preprints + post-publication peer review:
+  * https://blog.scienceopen.com/2016/02/pre-or-post-publication-peer-review/
 
-pulls in dozens of functions in a nice bundle.
-  * Jeet Sukumaran's [DendroPy](https://dendropy.org/) has >2,000 functions
-  * the vast majority are inside classes they pertain to: see [the Tree class docs](https://dendropy.org/library/treemodel.html#the-tree-class)
-  * `tree.as_ascii_plot(...)` is less annoying having many `x_as_ascii_plot(...)` functions for every sort of data
 
 
+#### Odd incentives in academic publishing
+  * Publishing can be expensive even when publishers don't do much. See [blog post here]](https://townsendcenter.berkeley.edu/blog/academic-publishing-one-big-racket) and [Vox writeup here](https://www.vox.com/science-and-health/2019/3/1/18245235/university-of-california-elsevier-subscription-open-access)
+    * author pays, ([see reaction to Nature fee](https://twitter.com/dr_michaelmarks/status/1318468815357968384)), or
+    * institution pays for subscriptions
+  * Mandates by [funding agencies](https://guides.library.unr.edu/openaccess/mandates#:~:text=Federal%20Open%20Access%20Mandates,their%20research%20with%20the%20public.) are pushing the equlibrium toward open access.
 
 
-### #2 Bundling data
-Imagine writing a 3-D physics particle motion simulator. Each particle has:
-  * mass
-  * 3 position coordinates: `x_pos`, `y_pos`, `z_pos`
-  * velocity in 3 directions: `x_vel`, `y_vel`, `z_vel`
-If you have 100 particles...
 
 
+#### Odd incentives in academic publishing - 2
+  * Institutional rewards for quantity over quality - ["deans can't read, but they can count"](http://mungowitzend.blogspot.com/2009/11/deans-cant-read-but-they-can-count.html) <small>(note link rot in link to paper, also rotted [here](https://taxprof.typepad.com/taxprof_blog/2009/11/scholarly-productivity-.html) )</small>
+  * ["predatory" Open Access journals](https://guides.umd.umich.edu/c.php?g=813057&p=5801511#:~:text=Predatory%20open%2Daccess%20publishing%20is,(open%20access%20or%20not)
+  * Search tools like [Google Scholar](https://scholar.google.com/) don't always distinguish based on real scientific journals see [this hit, for example](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=flood+transported+quartzites+east+of+the+Rocky+Mountains&btnG=). Web of Science is more rigorous (usually)
 
-#### Lots of lists - one for each attribute
-    forces = calc_gravity(mass_l, x_pos_l, y_pos_l, z_pos_l)
-    x_force_l, y_force_l, z_force_l = forces
-    alter_velocity(mass_l, x_pos_l, y_pos_l, z_pos_l,
-                   x_force_l, y_force_l, z_force_l,
-                   x_vel_l, y_vel_l, z_vel_l)
-It's annoying to have functions with 10 arguments.
-If you add an attribute (`charge`, perhaps), you have to 
-modify lots of function signatures.
 
 
+#### Replication in science - 1
+You need the data and scripts
+  * reviewers often don't demand the data
+    * [study of data availability in phylogenetics](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001636)
+    * investigator pages can die or move - link rot
+    * dedicated infrastructure is not always maintained (often because funding dries up): https://treebase.org/
+  * data "available on request" - has [a very mixed success](https://www.nature.com/articles/s41597-021-00981-0) even if the journal mandates this
 
-#### Lists of lists - each inner list holds properties of one particle
-    ###########   mass, xpos  ypos  zpos, xvel, yvel, zvel
-    particles = [[10.5, 11.3, 12.3, -1.4,  0.3, 21.8, 1.5],
-                 [20.1, 51.3, 27.3, 55.4, -1.8, 31.5, 3.5],
-                 ...
-                ]
-    forces = calc_gravity(particles)
-    alter_velocity(particles, forces)
-  * Better, but is element 0 is mass, or xpos, ypos,...
-  * wrong index = silent error
-  * Hard to a new variable (unless it is at the end of each list)
 
 
+#### Replication in science - 2
+Fraud
+  * [rare, but happens](https://www.pnas.org/doi/10.1073/pnas.1708272114)
+    * https://www.nature.com/articles/d41586-020-00287-y
+Fraud or sloppiness
+ * https://retractionwatch.com/2021/11/02/ivermectin-covid-19-study-retracted-authors-blame-file-mixup/
+ * [Excel error in economics paper arguing about the effect of debt](https://www.economics.utoronto.ca/gindart/2013-04-19%20-%20The%20excel%20depression.pdf)
 
-#### Lists of dict - each dict holds properties of one particle
-    particles = [{"mass": 10.5,
-                  "x_pos": 11.3, "y_pos": 12.3, "z_pos": -1.4,
-                  "x_vel": 0.3, "y_vel": 21.8, "z_vel": 1.5],
-                ...
-                ]
-    forces = calc_gravity(particles)
-    alter_velocity(particles, forces)
-  * A lot better.
-  * Initialization is a pain
-  * Classes are a lot like this option, but with better error-checking and syntax...
+https://retractionwatch.com/
 
 
 
-
-#### Lists of instances of class Particle
-    particles = [Particle(mass=10.5, pos=[11.3, 12.3,- 1.4],
-                          vel=[0.3, 21.8, 1.5]),
-                ...
-                ]
-    forces = calc_gravity(particles)
-    alter_velocity(particles, forces)
-  * Cleaner
-  * You can add checks in the initialization of each particle to assure that `mass` is a number, `pos` and `vel` are lists of 3 numbers, _etc_
-  * You can associate appropriate behavior (functions) with Particles
-
-
-
-### #3 Encapsulation
-    if person.current_age >= 21:
-        print("You can buy alcohol (legally).")
-    # person.current_age  might be the stored variable
-    # OR person.birthdate might be the stored variable
-
-  * When you write a class you can hide some of the ugly details from code that uses the class.
-  * There are many ways to store data and keep it synchronized
-  * A class's functions can assure data integrity without requiring the user to understand the implemenation details.
-
-
-
-### #4 Modularity
-    class WebServiceWrapper:
-        ... # this class has a helper functions 
-            #  for call web-services
-
-    class OTWebServiceWrapper(WebServiceWrapper):
-        ... # this class has helpers specific to the
-            # OpenTreeOfLife web services
-
-    class NCBIWebServiceWrapper(WebServiceWrapper):
-        ... # This could hold helpers specific to 
-            #  NCBI services
-
-  * `WebServiceWrapper` becomes a module of behaviors that 
-can be easily extended.
-  * Helps us avoid code duplication
-
-
-
-
-#### For further info on the basics of classes in Python
-  * Corey Shafer has some nice youtube videos on classes at: https://youtu.be/ZDa-Z5JzLYM
-
-
-
-#### Everything in python has a type
-    a = 34
-    b = "34"
-    c = [3, 4]
-    type(a)
-    type(b)
-    type(c)
-    a*10
-    b*10
-    c*10
-The `class` statement lets you create a new type <small>(sort of - there is slight distinction between a type and a class, but beginners can ignore it)</small>
-
-
-
-#### Basic syntax
-    class SomeName(SomeParentClassName):
-        pass
-  * defines a class called <i>SomeName</i>.
-  * says that the new class will inherit behavior from the parent class <i>SomeParentClassName</i>
-
-  * You need to indent the contained code following `:`
-  * Like a function <code>def</code>, defining a <code>class</code> does not cause actions to be executed - it provides a recipe for later use
-
-
-
-#### Creating instances of your class
-    class Person:
-        pass
-
-    me = Person()
-    a = int("34")
-    b = str("34")
-    c = list("34")
-
-
-
-#### Even an empty class can be useful as organization
-    me = Person()
-    me.age = 49
-    me.name = "Mark Holder"
-is a bit cleaner than:
-
-    myinfo = {}
-    myinfo["age"] = 49
-    myinfo["name"] "Mark Holder"
-but it is very similar, see:
-
-    print(me.__dict__)
-
-
-
-#### The "dot" notation is for "attribute" access
-    me.age                  # preferred syntax
-    getattr(me, "age")      # same, and occassionally useful
-    me.__dict__["age"]      # same in _some_ cases 
-    getattr(me, age)        # WRONG
-
-    me.age = 50             # preferred syntax
-    setattr(me, "age", 50)  # same, and occassionally useful
-    me.__dict__["age"] = 50 # same in _some_ cases 
-    setattr(me, age, 50)    # WRONG
-
-
-
-#### A `def` inside a `class` creates a "method" - a special "bound"  function
-    class Person:
-        def compose_full_name(self):
-            n = "{} {}".format(self.first_name, self.last_name)
-            return n
-    me = Person()
-    me.first_name = "Mark"
-    me.last_name = "Holder"
-    me.compose_full_name()      # Call the method. no arg in ()
-    me
-    me.compose_full_name        # It is a method bound to "me"
-    Person.compose_full_name    # We defined the func in a class
-    Person.compose_full_name()  # Needs an arg if called as func
-    Person.compose_full_name(me) # this works, but is awkward
-
-
-
-#### methods
-  * a class's function called by `instance.func_name()`
-  * binds the `instance` to the first argument: `self`
-  * used to provide a generic behavior with the data bundled in the `self` object.
-
-<small>Technically, the first argument doesn't _have_ to be called `self`, but don't violate this convention</small>
-
-
-
-
-#### Special methods
-  * in double underscores, "dunderscores": \_\_somename\_\_
-  * usually not called in the normal way - interact with some core aspects of python dealing with objects
-  * Often only need:
-    * `__init__`  initializer called during `Person()`
-    * `__str__`  returns a string form of the instance
-
-
-
-#### `Person` class within init to validate
-
-    class Person:
-        def __init__(self, first, last):
-            for i in [first, last]:
-              if not isinstance(i, str):
-                  raise TypeError("Expecting string names, got {}".format(i))
-            self.first_name = first
-            self.last_name = last
-        def compose_full_name(self):
-            n = "{} {}".format(self.first_name, self.last_name)
-            return n
-    me = Person(first="Mark", last="Holder")
-    me.compose_full_name()
-    someone = Person("Joe", "Biden")
-    arg_checking = Person("Louis", 14)
-
-
-
-
-#### The @property can provide an pseudo-attribute
-    class Person:
-        ...
-        @property
-        def full_name(self):
-            n = "{} {}".format(self.first_name, self.last_name)
-            return n
-
-    me = Person(first="Mark", last="Holder")
-    me.full_name                  # really is a method call
-    me.first_name = "Bill"
-    me.full_name                  # See! calculated on the fly
-    me.__dict__                   # full_name is not stored data
-    me.full_name = "Jorge Holder" # simple props are read-only
-
-
-
-#### Attribute access cascade
-For the code <code>o.foo</code> where <code>o</code> is an instance of class <code>X</code> , Python follows a cascade stopping at the first success:
-  1. checks if <code>foo</code> is a property of <code>X</code>
-  2. checks for <code>"foo"</code> in <code>o.__dict__</code>
-  3. check if  <code>foo</code> is defined in  <code>X</code>
-  4. check if  <code>foo</code> is defined in a parent class of <code>X</code>
-
-
-
-
-#### example
-    class A:
-        def greet(self):
-            print("hi from A", self)
-      
-    class B(A):
-        def greet(self):
-            print("hi from B", self)
-      
-    class C(A):
-        pass
-      
-    a = A(); b = B(); c = C()
-    a.greet(); b.greet(); c.greet()
-
-
-
-#### Exercises
-See <a href="./python-classes/index.html">./python-classes/index.html</a>
+#### _P_-hacking
+  * https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002106
+  * There is a bias against publishing "negative" results that don't reject the null
