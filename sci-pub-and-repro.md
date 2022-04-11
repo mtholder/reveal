@@ -66,6 +66,23 @@ https://retractionwatch.com/
 
 
 
-#### _P_-hacking
+#### _p_-hacking
   * https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002106
   * There is a bias against publishing "negative" results that don't reject the null
+
+1 form of publication bias. See also https://www.ted.com/talks/ben_goldacre_battling_bad_science (start at 9:15 for volcano plot explanation)
+
+
+
+#### Low _p_-value can happen when the null is true
+  * If you only test true nulls...
+    * you'll still get some rejections
+    * 100% of your rejections will be false rejections
+
+
+
+
+#### Machine learning + computer-based proofs
+  * [machine learning methods](https://en.wikipedia.org/wiki/Machine_learning) can pick up patterns in ways that are opaque to humans
+  * [some proofs are not understood by humans](https://www.nature.com/articles/d41586-021-01627-2)
+
