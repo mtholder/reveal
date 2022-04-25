@@ -1,5 +1,5 @@
 #### Hi (again)!
-  * [Mark T. Holder](http://phylo.bio.ku.edu)
+  * [Mark T. Holder](https://phylo.bio.ku.edu)
   * computational evolutionary biologist in EEB and the BI
   * https://orcid.org/0000-0001-5575-0536
 

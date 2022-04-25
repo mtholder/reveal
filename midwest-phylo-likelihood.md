@@ -64,7 +64,7 @@ L(\theta)  =  \Pr(X\mid \theta) & = & \prod_{i=1}^n \Pr(x_i \mid \theta)
   * Every 10,000 generations we sequence the locus, and note what
 	base is at our site of interest.
   * I guess we have a time machine 😎
-  * Click [here](http://phylo.bio.ku.edu/mephytis/tex/discrete-time-and-state-Markov.pdf)  for a more detailed write up
+  * Click [here](https://phylo.bio.ku.edu/mephytis/tex/discrete-time-and-state-Markov.pdf)  for a more detailed write up
   * We want to estimate "*s*", the **probability that the site will be different
 	the next time we sample**.
   * Our data might look like: <tt>GGCCCCCCCA</tt> for 10 sample points
@@ -106,13 +106,13 @@ L(s)  =  \Pr(X\mid s) & = & \prod_{i=1}^n \Pr(x_i \mid s) \\
 
 ### Demo
 
-Checkout <a href="http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/index.html" target="_blank">http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/index.html</a>
+Checkout <a href="https://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/index.html" target="_blank">https://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/index.html</a>
 
 
 
 ### Missing data Demo
 
-Also note the ML deals with missing data nicely <a href="http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/missing.html" target="_blank">http://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/missing.html</a>
+Also note the ML deals with missing data nicely <a href="https://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/missing.html" target="_blank">https://phylo.bio.ku.edu/mephytis/disc-state-disc-time-Markov/missing.html</a>
 
 
 
