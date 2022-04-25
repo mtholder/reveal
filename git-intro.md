@@ -5,6 +5,11 @@
 
 
 
+#### Credits
+  * https://swcarpentry.github.io/git-novice/
+  * https://github.com/kcranston/2013-08-ku
+
+
 ### Goals
  * Learning how to use <code>git</code> branches effectively.
    * <code>git branch</code>
