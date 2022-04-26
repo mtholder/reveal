@@ -8,6 +8,7 @@
 #### Credits
   * https://swcarpentry.github.io/git-novice/
   * https://github.com/kcranston/2013-08-ku
+  * https://www.slideshare.net/chacon/git-101-presentation/
 
 
 
