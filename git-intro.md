@@ -10,98 +10,77 @@
   * https://github.com/kcranston/2013-08-ku
 
 
-### Goals
- * Learning how to use <code>git</code> branches effectively.
-   * <code>git branch</code>
-   * <code>git merge</code>
-   * <code>git remote add ...</code>
-   * <code>git fetch</code>
- * Emphasize the importance of running tests:
-   * verification of correctness
-   * debugging
-   * continuous integration
-   * <code>git bisect</code>
 
-
-
-### I'm assuming that you:
-  * know <code>git clone</code>
-  * know how to author commits with <code>git add</code> and <code>git commit</code>
-  * have configured your local version of git to work with your account on [GitHub](https://github.com/)
-
-If not see: 
-  [Software Carpentry git novice](https://swcarpentry.github.io/git-novice/02-setup/) 
-  and/or ask me for help
-
-
-
-### Demystifying <code>git</code>
-<code>git</code> stores information in 3 types of objects:
-  * **blob** objects store the contents of a *versioned*  file
-  * **tree** objects store snapshots of a *versioned* directory. This is essentially a
-  list of which versions of each **blob** are in that snapshot
-  * **commit** objects associate a **tree** snapshot with its parent **commits** and the metadata for a commit (author, timestamp, commit message)
-
-Don't worry about learning the commands I'm about to show - almost on git users use these!
-
-
-
-### This is the part where I'll:
-  * use <code>tree</code>, <code>git init</code>, my editor, git commit skills
-  * use the very obscure <code>git cat-file -p &lt;SHA&gt;</code> to see the core
-  objects
-  * review using Scott Chacon's truly awesome [Git 101 slideshow](https://www.slideshare.net/chacon/git-101-presentation/117). 
-
-
-
-### Important commands (review)
-  * <code>git add ...</code> to stage changes so they'll be committed.
-  * <code>git commit ...</code> to create commit object and advance the current branch to point
-    to that new commit.
-  * <code>git checkout &lt;branch-name&gt;</code> makes your working tree look like the tree
-    stored at that branch, and registers that branch as the HEAD for future commits.
-
-
-
-### Remotes
-  * slides from [Git 101 slideshow](https://www.slideshare.net/chacon/git-101-presentation/213).
-
-
-
-### remotes and "publishing" your work to a remote
-  * A remote is just another git repository. Usually it is on another machine.
-  * <code>git push</code> sends commits and the branch to the remote
-    * Sends the objects and advances the "upstream" branch pointer
-    * So that you have a broken state, you can only push "fast-forwards" (unless you force things)
-
-
-
-### Getting information from the remote
-  * <code>git fetch</code> retrieves the remote's objects and branch pointers
-  * <code>git branch -a</code> lists all branches
-  * The key: <code>remote-name/branch-name</code> is just another branch
-  * <code>git pull</code> is just shorthand for <code>fetch</code> and then <code>merge</code>
+#### Version control
+Except for trivial tasks, programming involves
+  * writing code,
+  * testing whether it works,
+  * repeat
+You will have many versions of your code.
+A version control system helps you manage
+changes to a code-base
 
 
 
 
-### A fork on GitHub (or other git server)
-  * just another remote.
-  * has its own branch pointers.
+#### `git` – _a_ distributed version control system
+“Distributed”:  every developer has the entire version history. There is _no_ central server.
+
+`git` lets you:
+  * return to a previous snapshot of your code,
+  * merge work from several developers,
+  * easily share your code,
+  * easily back up your code.
 
 
 
 
-### Joys of having a test script:
-  * test before you commit
-  * test after you merge (or pull, since a pull is a merge) - unless you did a fast-forward merge
-  * <code>git bisect</code>
-  * [Travis continuous integration testing](https://travis-ci.org/OpenTreeOfLife/peyotl) see configuration file at [peyotl on GitHub](https://github.com/OpenTreeOfLife/peyotl/blob/master/.travis.yml)
+#### `git` ≠ github
+  * `git` the command-line tool that manages versioning and distributing changes between different copies of the repository
+  * [https://github.com](https://github.com) is web site that provides a lot of collaboration tools on top of git repositories
 
 
 
 
-### Links
-  * See [data repo](https://github.com/mtholder/git-branch-tutorial-data) for notes and scripts
-  * See [SwC git tutorial starting at "remotes"](https://swcarpentry.github.io/git-novice/07-github/)  for an exercise
+#### Core `git` commands
+  * `git init` – create and empty repository
+  * `git clone` – obtain an existing repository
+  * `git add` – to tell git that you want to track a file
+  * `git commit` – to add content to the repository
+  * `git checkout` – copy code out of the repository to your filesystem
+  * `git status` – create a report of how git sees the world
+  * `git diff` – to show difference between versions
 
+
+
+
+#### Setup - once per machine
+The file `~/.gitconfig` stores some global settings that apply
+to any git repository on your machine. `git config` command
+is a tool to edit it. 2 are very important for attributing your commits correctly:
+
+    $ git config --global user.name "Your Name Here"
+    $ git config --global user.email "your.email@some.server"
+
+[This link](https://mtholder.github.io/git-novice/02-setup/index.html#line-endings) shows how to set your text editor
+
+
+
+
+#### A `git` versioned directory
+`git` uses a directory on your computer.
+  * The directory:
+    * is your **working directory**
+    * contains your versioned files and subdirs
+    * can contain unversioned files (not controlled by `git`)
+    * top-level holds a `.git` repository
+  * The `.git` repository is:
+    * the local database storing the history
+    * contains info for the *index* or *staging area* which I won't discuss in detail (see [here](../git-branching.html) if you want).
+
+
+
+
+#### 2 ways to make a `git` repository
+  * `git init` to start a new one from scratch
+  * `git clone` to make a copy of an existing repo.
