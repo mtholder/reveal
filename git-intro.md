@@ -172,3 +172,18 @@ is a tool to edit it. 2 are very important for attributing your commits correctl
 (note the lack of the `-m "some message"`)
   * Drops you into your configured text editor
   * [This link](https://mtholder.github.io/git-novice/02-setup/index.html#line-endings) shows how to set your text editor
+
+
+
+#### other common commands
+  * `git status` shows info on your working directory, the staging area, and the HEAD of the database
+  * `git diff` compares contents of files in different versions
+  * `git checkout SHAGOESHERE` is like the inverse of a `git commit -a` It sets your working directory to the version identified by the SHA
+
+
+
+
+#### Try it out:
+https://mtholder.github.io/git-novice/03-create/index.html
+ 
+(my slight tweaks to the software carpentry intro)
