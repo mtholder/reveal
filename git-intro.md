@@ -116,7 +116,6 @@ is a tool to edit it. 2 are very important for attributing your commits correctl
 
 
 
-
 #### `git add` to version new files
 
     cd from-scratch
@@ -183,7 +182,13 @@ is a tool to edit it. 2 are very important for attributing your commits correctl
 
 
 
-#### Try it out:
+#### Basic workflow
+https://www.slideshare.net/chacon/git-101-presentation/70
+
+
+
+
+#### Let's try it out:
 https://mtholder.github.io/git-novice/03-create/index.html
  
 (my slight tweaks to the software carpentry intro)
