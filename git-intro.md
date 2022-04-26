@@ -85,3 +85,90 @@ is a tool to edit it. 2 are very important for attributing your commits correctl
 #### 2 ways to make a `git` repository
   * `git init` to start a new one from scratch
   * `git clone` to make a copy of an existing repo.
+
+
+
+
+#### `git init`
+
+    mkdir from-scratch
+    cd from-scratch
+    git init
+    ls -a     # in bash "dir" on Windows
+    find .    # in bash (I don't know on Windows )
+
+  * `git init` should be used inside the directory you want to be the top-level of the versioned content
+  * creates a `.git` directory with the necessary structure to hold the `git` database
+
+
+
+#### `git clone`
+
+    cd ..
+    git clone https://github.com/mtholder/grokking-git.git
+    #               ... or ...
+    git clone git@github.com:mtholder/grokking-git.git
+    #               ... or ...
+    git clone ~/some/other/directory/on/your/filesystem
+
+  * Copies an existing repo using one of a few protocols
+  * The source of the repo is often GitHub
+
+
+
+
+#### `git add` to version new files
+
+    cd from-scratch
+    echo hi >> README.md
+    mkdir subdir
+    echo hi again >> subdir/README.md
+    git status
+    git add README.md
+    git status
+    git add subdir/README.md
+    git status
+
+
+
+
+#### *Staging area*
+(I lied we have to talk about it a little) 
+
+  * `git add` puts files from your working directory into the staging area
+  * They aren't added to the `git` database until you `git commit`
+
+
+
+#### `git commit`
+
+    git commit -m "READMEs saying hi"
+
+  * creates a "commit" object in the git database:
+    * pointer to previous "parent" commit (none for first commit)
+    * snapshot of the whole versioned "tree" of files (if they were added)
+    * commit message (with the `-m` flag above)
+  * Every commit gets an ID called a SHA
+
+
+
+
+#### Add all flag
+
+    git commit -a -m "some other message"
+
+  * **After** you have added a files **once** to git:
+    * whenever you've edited them more:
+    * the `-a` will add "all" of them to the commit.
+  * Let's you go from working directory -> git database in one command.
+
+
+
+
+#### If you for get the message flag
+
+    git commit -a
+
+(note the lack of the `-m "some message"`)
+  * Drops you into your configured text editor
+  * [This link](https://mtholder.github.io/git-novice/02-setup/index.html#line-endings) shows how to set your text editor
