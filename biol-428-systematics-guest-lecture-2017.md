@@ -166,7 +166,7 @@ Paraphrasing [Redelings and Holder (2017)](https://peerj.com/articles/3058/),
 the summary tree should:
 
   1. display no unsupported groups,
-  2. defer higher ranked trees,
+  2. defer to higher ranked trees,
   3. be as resolved as feasible, and
   4. displays as many groupings from input trees as possible.
 
@@ -214,7 +214,7 @@ Paraphrasing [Redelings and Holder (2017)](https://peerj.com/articles/3058/),
 the summary tree should:
 
   1. display no unsupported groups,
-  2. defer higher ranked trees,
+  2. defer to higher ranked trees,
   3. be as resolved as feasible, and
   4. displays as many groupings from input trees as possible.
 
