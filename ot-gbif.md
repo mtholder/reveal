@@ -139,14 +139,3 @@ Only about 65 thousand tips are exemplified in a phylogenetic input, so we:
 ### Thanks! 
   * NSF
   * the entire Open Tree of Life team and community volunteers.
-  * Gavin and David for inviting me
-
-
-
-
-### Questions?
-### My question for you:
-
-What features would motivate you to contribute studies/trees to Open Tree?
-
-(you can also give us feedback via our [gitter group chat channel](https://gitter.im/OpenTreeOfLife/public) )
