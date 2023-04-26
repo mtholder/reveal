@@ -36,6 +36,63 @@ https://github.com/OpenTreeOfLife/phylesystem-1
 
 
 
+### OT data model for input tree
+
+  1. "NexSON" - JSON-ized NeXML
+  2. OT curation results stored as name-spaced `ot:` tags
+
+
+### ot:tags
+
+    agents
+    altLabel
+    annotationEvents
+    bootstrapValues
+    branchLengthDescription
+    branchLengthMode
+    branchLengthTimeUnit
+    candidateTreeForSynthesis
+    comment
+    curatedType
+    curatorName
+    dataDeposit
+    focalClade
+    focalCladeOTTTaxonName
+    inGroupClade
+    isTaxonExemplar
+    messages
+    MRCAName
+    MRCAOttId
+    nearestTaxonMRCAName
+    nearestTaxonMRCAOttId
+    nodeLabelDescription
+    nodeLabelMode
+    nodeLabelTimeUnit
+    notIntendedForSynthesis
+    originalLabel
+    otherSupport
+    otherSupportType
+    ottId
+    ottTaxonName
+    otusElementOrder
+    outGroupEdge
+    posteriorSupport
+    reasonsToExcludeFromSynthesis
+    rootNodeId
+    specifiedRoot
+    studyId
+    studyPublication
+    studyPublicationReference
+    studyYear
+    tag
+    taxonLink
+    taxonLinkPrefixes
+    treebaseOTUId
+    treeElementOrder
+    treesElementOrder
+    unrootedTree
+
+
 ### Assembly of the Open Tree Taxonomy (OTT)
 
 See [Rees and Cranston (2017)](https://bdj.pensoft.net/article/12581/)
@@ -45,8 +102,6 @@ An automated system creates OTT by merging:
   * 6 large taxonomies (NCBI, GBIF, IRMNG, SILVA, Index Fungorum, WoRMS)
   * 2 small taxonomies from publications Hibbett *et al.* (2007) and Schäferhoff *et al.* (2010)
   * a curated set of corrections.
-
-
 
 
 
