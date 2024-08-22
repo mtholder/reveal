@@ -76,7 +76,3 @@ It's a lot! but we are here to help: **Our graduate school success rate is very 
   * TA's at the Workshop on Molecular Evolution
   * Lots of Software Carpentry workshops (Jamene Brooks-Kieffer at KU Libraries is a great resource for this)
 
-
-
-
-
